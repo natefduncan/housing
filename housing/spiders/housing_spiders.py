@@ -150,6 +150,7 @@ class homie(scrapy.Spider):
             print("3")
             rows = response.xpath(cards_path)
             print("4")
+            print(rows)
             values = []
             counter = 1 #Don't know why this is. 
             for i in rows:
