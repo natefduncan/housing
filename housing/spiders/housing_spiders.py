@@ -157,7 +157,7 @@ class homie(scrapy.Spider):
               link = self.driver.find_element_by_xpath(link_path)
               link.click()
               
-              time.sleep(2)
+              time.sleep(5)
               
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
