@@ -150,7 +150,7 @@ class homie(scrapy.Spider):
             rows = response.xpath(cards_path)
             
             values = []
-            counter = 1
+            counter = 2 #Don't know why this is. 
             for i in rows:
               print(i)
               link_path = cards_path + ("[%s]/div[3]/div[1]" % str(counter))
@@ -161,9 +161,6 @@ class homie(scrapy.Spider):
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
               time.sleep(7)
-              element = WebDriverWait(self.driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, info_base_xpath))
-                )
                 
               try:
                 element = WebDriverWait(self.driver, 20).until(
@@ -174,8 +171,9 @@ class homie(scrapy.Spider):
               
               response = scrapy.Selector(text=self.driver.page_source)
               info_base = response.xpath(info_base_xpath)
+              print(info_base)
               
-              price = info_base.xpath("/div[1]/div/span/text()")
+              price = info_base.xpath("/div[1]/div/span/text()").extract()
               print(price)
               address = info_base.xpath("/div[2]/h2/text()")
               print(address)
@@ -189,11 +187,6 @@ class homie(scrapy.Spider):
               print(sq_ft)
               acres = info_base.xpath("/div[3]/ul/li[4]/text()")
               print(acres)
-              yr_built = response.xpath("/html/body/div[5]/div[p7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[3]/div/span[2]/text()")
-              print(yr_built)
-              days_active = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[2]/div/span[2]/text()")
-              print(days_active)
-            
               #Go back one page. 
               self.driver.execute_script("window.history.go(-1)")
               
