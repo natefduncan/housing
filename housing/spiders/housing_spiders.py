@@ -154,7 +154,7 @@ class homie(scrapy.Spider):
             for i in rows:
               print(i)
               link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
-              self.driver.find_element_by_id(link_path).click()
+              self.driver.find_element_by_xpath(link_path).click()
               
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
