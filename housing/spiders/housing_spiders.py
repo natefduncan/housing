@@ -144,7 +144,7 @@ class homie(scrapy.Spider):
             wait = WebDriverWait(self.driver, 20)
             actions = ActionChains(self.driver)
             
-            page_wait.until(ec.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+            page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
             
             response = scrapy.Selector(text=self.driver.page_source)
             
@@ -157,7 +157,7 @@ class homie(scrapy.Spider):
               link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
               
               try:
-                link = wait.until(ec.element_to_be_clickable((By.XPATH, link_path)))
+                link = wait.until(EC.element_to_be_clickable((By.XPATH, link_path)))
                 actions.move_to_element(link).click().perform()
               except:
                 self.driver.close()
@@ -165,7 +165,7 @@ class homie(scrapy.Spider):
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
                 
-              page_wait.until(ec.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
               
               response = scrapy.Selector(text=self.driver.page_source)
               info_base = response.xpath(info_base_xpath)
