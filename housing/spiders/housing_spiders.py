@@ -152,7 +152,8 @@ class homie(scrapy.Spider):
             values = []
             counter = 1
             for i in rows:
-              link_path = cards_path + ("[%s]/div[3]/div[1]/a/img[1]" % str(counter))
+              print(i)
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
               self.driver.find_element_by_id(link_path).click()
               
               #Wait for the page to load. 
@@ -182,7 +183,7 @@ class homie(scrapy.Spider):
               print(sq_ft)
               acres = info_base.xpath("/div[3]/ul/li[4]/text()")
               print(acres)
-              yr_built = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[3]/div/span[2]/text()")
+              yr_built = response.xpath("/html/body/div[5]/div[p7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[3]/div/span[2]/text()")
               print(yr_built)
               days_active = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[2]/div/span[2]/text()")
               print(days_active)
