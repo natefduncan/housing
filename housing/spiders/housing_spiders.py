@@ -156,12 +156,14 @@ class homie(scrapy.Spider):
               link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
               self.driver.find_element_by_xpath(link_path).click()
               
+              time.sleep(2)
+              
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
               
               try:
                 element = WebDriverWait(self.driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, info_xpath_base))
+                    EC.presence_of_element_located((By.XPATH, info_base_xpath))
                 )
               except:
                   self.driver.close()
