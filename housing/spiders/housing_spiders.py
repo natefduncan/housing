@@ -158,7 +158,7 @@ class homie(scrapy.Spider):
               print("5")
               page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
               print("6")
-              link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
               link = self.driver.find_element_by_xpath(link_path)
               link.click()
               print("7")
