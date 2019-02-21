@@ -156,11 +156,14 @@ class homie(scrapy.Spider):
             for i in rows:
               print(i)
               print("5")
-              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
-              print("6")
               link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
-              link = self.driver.find_element_by_xpath(link_path)
-              link.click()
+              try:
+                link = wait.until(EC.element_to_be_clickable((By.XPATH, link_path)))
+                print("6")
+                actions.move_to_element(link).click().perform()
+              except TimeoutException:
+                raise ValueError('Unable to navigate to the next day') 
+
               print("7")
               
               page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
