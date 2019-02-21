@@ -136,10 +136,10 @@ class homie(scrapy.Spider):
             button.click()
             time.sleep(2)
             
-            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
+            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view' and not(@disabled))]"
 
             try:
-                element = WebDriverWait(self.driver, 20).until(
+                element = WebDriverWait(self.driver, 30).until(
                     EC.presence_of_element_located((By.XPATH, cards_path))
                 )
             except:
@@ -150,10 +150,10 @@ class homie(scrapy.Spider):
             rows = response.xpath(cards_path)
             
             values = []
-            counter = 2 #Don't know why this is. 
+            counter = 1 #Don't know why this is. 
             for i in rows:
               print(i)
-              link_path = cards_path + ("[%s]/div[3]/div[1]" % str(counter))
+              link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
               link = self.driver.find_element_by_xpath(link_path)
               link.click()
               time.sleep(5)
