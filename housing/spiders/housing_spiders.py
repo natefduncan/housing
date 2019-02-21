@@ -134,9 +134,9 @@ class homie(scrapy.Spider):
             button_path = "//html/body/div[1]/div/div/section[1]/div[2]/div/div/form/button"
             button = self.driver.find_element_by_xpath(button_path)
             button.click()
-            time.sleep(10)
+            time.sleep(2)
             
-            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li"
+            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[@class = 'component_property-card js-component_property-card js-quick-view']"
             
             try:
                 element = WebDriverWait(self.driver, 20).until(
@@ -150,9 +150,48 @@ class homie(scrapy.Spider):
             rows = response.xpath(cards_path)
             
             values = []
-            
+            counter = 1
             for i in rows:
-                print(i)
+              link_path = cards_path + "[%s]/div[3]/div[1]/a/img[1]" (% counter)
+              self.driver.find_element_by_id(link_path).click()
+              
+              #Wait for the page to load. 
+              info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
+              
+              try:
+                element = WebDriverWait(self.driver, 20).until(
+                    EC.presence_of_element_located((By.XPATH, info_xpath_base))
+                )
+              except:
+                  self.driver.close()
+              
+              response = scrapy.Selector(text=self.driver.page_source)
+              info_base = response.xpath(info_base_xpath)
+              
+              price = info_base.xpath("/div[1]/div/span/text()")
+              print(price)
+              address = info_base.xpath("/div[2]/h2/text()")
+              print(address)
+              city = info_base.xpath("/div[2]/h2/span/text()")
+              print(city)
+              bed = info_base.xpath("/div[3]/ul/li[1]/text()")
+              print(bed)
+              bath = info_base.xpath("/div[3]/ul/li[2]/text()")
+              print(bath)
+              sq_ft = info_base.xpath("/div[3]/ul/li[3]/text()")
+              print(sq_ft)
+              acres = info_base.xpath("/div[3]/ul/li[4]/text()")
+              print(acres)
+              yr_built = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[3]/div/span[2]/text()")
+              print(yr_built)
+              days_active = response.xpath('/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[2]/div/span[2]/text()")
+              print(days_active)
+            
+              #Go back one page. 
+              self.driver.execute_script("window.history.go(-1)")
+              
+              #Up the counter by one.     
+              counter += 1
             
             #Write the values to txt file. 
             
@@ -162,7 +201,7 @@ class homie(scrapy.Spider):
             for m in values:
                 f.write("%s\n" % m)
             f.close()
-
+      
 class zillow(scrapy.Spider):
     
     name = "zillow"
