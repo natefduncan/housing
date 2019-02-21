@@ -184,7 +184,7 @@ class homie(scrapy.Spider):
               print(acres)
               yr_built = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[3]/div/span[2]/text()")
               print(yr_built)
-              days_active = response.xpath('/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[2]/div/span[2]/text()")
+              days_active = response.xpath("/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/section/div[1]/ul/li[2]/div/span[2]/text()")
               print(days_active)
             
               #Go back one page. 
