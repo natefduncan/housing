@@ -143,17 +143,18 @@ class homie(scrapy.Spider):
             page_wait = WebDriverWait(self.driver, 60)
             wait = WebDriverWait(self.driver, 20)
             actions = ActionChains(self.driver)
-            
+            print("1")
             page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
-            
+            print("2")
             response = scrapy.Selector(text=self.driver.page_source)
-            
+            print("3")
             rows = response.xpath(cards_path)
-            
+            print("4")
             values = []
             counter = 1 #Don't know why this is. 
             for i in rows:
               print(i)
+              print("5")
               link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
               
               try:
