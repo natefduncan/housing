@@ -136,8 +136,8 @@ class homie(scrapy.Spider):
             button.click()
             time.sleep(2)
             
-            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class = 'component_property-card js-component_property-card js-quick-view')]"
-            
+            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
+
             try:
                 element = WebDriverWait(self.driver, 20).until(
                     EC.presence_of_element_located((By.XPATH, cards_path))
