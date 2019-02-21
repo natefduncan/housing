@@ -19,7 +19,7 @@ from pathlib import Path
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait, ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from pyvirtualdisplay import Display
@@ -138,12 +138,12 @@ class homie(scrapy.Spider):
             
             cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view' and not(@disabled))]"
             time.sleep(5)
-            try:
-                element = WebDriverWait(self.driver, 30).until(
-                    EC.presence_of_element_located((By.XPATH, cards_path))
-                )
-            except:
-                self.driver.close()
+            
+            page_wait = WebDriverWait(self.driver, 60)
+            wait = WebDriverWait(self.driver, 20)
+            actions = ActionChains(self.driver)
+            
+            page_wait.until(ec.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
             
             response = scrapy.Selector(text=self.driver.page_source)
             
@@ -154,20 +154,17 @@ class homie(scrapy.Spider):
             for i in rows:
               print(i)
               link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
-              link = self.driver.find_element_by_xpath(link_path)
-              link.click()
-              time.sleep(5)
+              
+              try:
+                link = wait.until(ec.element_to_be_clickable((By.XPATH, link_path)))
+                actions.move_to_element(link).click().perform()
+              except:
+                self.driver.close()
               
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
-              time.sleep(7)
                 
-              try:
-                element = WebDriverWait(self.driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, info_base_xpath))
-                )
-              except:
-                  self.driver.close()
+              page_wait.until(ec.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
               
               response = scrapy.Selector(text=self.driver.page_source)
               info_base = response.xpath(info_base_xpath)
