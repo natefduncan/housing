@@ -153,8 +153,8 @@ class homie(scrapy.Spider):
             counter = 1
             for i in rows:
               print(i)
-              link_path = cards_path + ("[%s]/div[3]" % str(counter))
-              self.driver.find_element_by_xpath(link_path).click()
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
+              self.driver.find_element_by_xpath(link_path).click()  #This is not clicking right. 
               
               time.sleep(2)
               
