@@ -155,14 +155,15 @@ class homie(scrapy.Spider):
             for i in rows:
               print(i)
               print("5")
+              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+              print("6")
               link_path = cards_path + ("[%s]/div[3]/div[not(@disabled)][1]" % str(counter))
+              link = self.driver.find_element_by_xpath(link_path)
+              link.click()
+              print("7")
               
-              try:
-                link = wait.until(EC.element_to_be_clickable((By.XPATH, link_path)))
-                actions.move_to_element(link).click().perform()
-              except:
-                self.driver.close()
-              
+              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+              print("8")
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
                 
