@@ -160,7 +160,11 @@ class homie(scrapy.Spider):
               
               #Wait for the page to load. 
               info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
-              
+              time.sleep(7)
+              element = WebDriverWait(self.driver, 20).until(
+                    EC.presence_of_element_located((By.XPATH, info_base_xpath))
+                )
+                
               try:
                 element = WebDriverWait(self.driver, 20).until(
                     EC.presence_of_element_located((By.XPATH, info_base_xpath))
