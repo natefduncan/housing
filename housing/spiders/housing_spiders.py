@@ -141,7 +141,13 @@ class homie(scrapy.Spider):
             cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
             time.sleep(5)
             
-            page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+            try:
+                element = WebDriverWait(self.driver, 20).until(
+                    EC.presence_of_element_located((By.XPATH, cards_path))
+                )
+            except:
+                self.driver.close()
+            
             response = scrapy.Selector(text=self.driver.page_source)
             rows = response.xpath(cards_path)
             values = []
