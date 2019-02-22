@@ -93,7 +93,7 @@ USER_AGENTS = [
 ]
 
 ROTATING_PROXY_LIST_PATH = str(path) + "/housing/spiders/proxy_list.txt"
-'''
+
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
