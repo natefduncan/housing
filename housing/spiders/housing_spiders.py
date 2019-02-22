@@ -25,8 +25,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from pyvirtualdisplay import Display
 
-page_wait = WebDriverWait(self.driver, 60)
-
 #FOR SPLASH
 
 #import docker
@@ -119,6 +117,7 @@ class homie(scrapy.Spider):
         
         self.driver.get(response.url)
         
+        page_wait = WebDriverWait(self.driver, 60)
         areas = ["Dallas, TX", "Frisco, TX"]
         
         for i in areas: 
@@ -158,6 +157,7 @@ class homie(scrapy.Spider):
     def parse2(self, response):
       
         self.driver.get(response.url)
+        page_wait = WebDriverWait(self.driver, 60)
         info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
           
         page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
