@@ -41,7 +41,7 @@ class proxy(scrapy.Spider):
             proxies.append(str(i.xpath("td[1]/text()").extract()[0]) + ":" + str(i.xpath("td[2]/text()").extract()[0]))
 
         filename = "proxy_list.txt"
-        f = open(filename, 'a+')
+        f = open(filename, 'w+')
         
         for m in proxies:
             f.write("%s\n" % m)
