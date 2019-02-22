@@ -44,6 +44,7 @@ class proxy(scrapy.Spider):
         f = open(filename, 'w+')
         
         for m in proxies:
+            print(m)
             f.write("%s\n" % m)
         f.close()
         
