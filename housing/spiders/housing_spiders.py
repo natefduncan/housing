@@ -150,7 +150,7 @@ class homie(scrapy.Spider):
               link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
               link = response.xpath(link_path).extract()[0]
               
-              yield scrapy.Response(url=link, callback=self.parse2)
+              yield scrapy.Request(url=link, callback=self.parse2)
               
               counter += 1
               
