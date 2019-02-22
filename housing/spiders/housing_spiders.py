@@ -25,6 +25,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from pyvirtualdisplay import Display
 
+page_wait = WebDriverWait(self.driver, 60)
+
 #FOR SPLASH
 
 #import docker
@@ -140,71 +142,56 @@ class homie(scrapy.Spider):
             cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
             time.sleep(5)
             
-            page_wait = WebDriverWait(self.driver, 60)
-            wait = WebDriverWait(self.driver, 20)
-            actions = ActionChains(self.driver)
-            print("1")
             page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
-            print("2")
             response = scrapy.Selector(text=self.driver.page_source)
-            print("3")
             rows = response.xpath(cards_path)
-            print("4")
-            print(rows)
             values = []
             counter = 1 #Don't know why this is. 
             for i in rows:
-              print(i)
-              print("5")
-              link_path = cards_path + ("[%s]/div[3]/div[1]/a" % str(counter))
-              try:
-                link = wait.until(EC.element_to_be_clickable((By.XPATH, link_path)))
-                print("6")
-                actions.move_to_element(link).click().perform()
-              except TimeoutException:
-                raise ValueError('Unable to navigate to the next day') 
-
-              print("7")
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
+              link = response.xpath(link_path).extract()[0]
               
-              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
-              print("8")
-              #Wait for the page to load. 
-              info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
-                
-              page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+              yield scrapy.Response(url=link, callback=self.parse2)
               
-              response = scrapy.Selector(text=self.driver.page_source)
-              info_base = response.xpath(info_base_xpath)
-              print(info_base)
-              
-              price = info_base.xpath("/div[1]/div/span/text()").extract()
-              print(price)
-              address = info_base.xpath("/div[2]/h2/text()")
-              print(address)
-              city = info_base.xpath("/div[2]/h2/span/text()")
-              print(city)
-              bed = info_base.xpath("/div[3]/ul/li[1]/text()")
-              print(bed)
-              bath = info_base.xpath("/div[3]/ul/li[2]/text()")
-              print(bath)
-              sq_ft = info_base.xpath("/div[3]/ul/li[3]/text()")
-              print(sq_ft)
-              acres = info_base.xpath("/div[3]/ul/li[4]/text()")
-              print(acres)
-              #Go back one page. 
-              self.driver.execute_script("window.history.go(-1)")
-              
-              #Up the counter by one.     
               counter += 1
-            
-            #Write the values to txt file. 
-            
-            filename = "homie_data.txt"
-            f = open(filename, 'a+')
-    
-            for m in values:
-                f.write("%s\n" % m)
-            f.close()
+              
+    def parse2(self, response):
+      
+        self.driver.get(response.url)
+        info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
+          
+        page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
+        
+        response = scrapy.Selector(text=self.driver.page_source)
+        
+        info_base = response.xpath(info_base_xpath)
+        
+        print(info_base)
+        price = info_base.xpath("/div[1]/div/span/text()").extract()
+        print(price)
+        address = info_base.xpath("/div[2]/h2/text()")
+        print(address)
+        city = info_base.xpath("/div[2]/h2/span/text()")
+        print(city)
+        bed = info_base.xpath("/div[3]/ul/li[1]/text()")
+        print(bed)
+        bath = info_base.xpath("/div[3]/ul/li[2]/text()")
+        print(bath)
+        sq_ft = info_base.xpath("/div[3]/ul/li[3]/text()")
+        print(sq_ft)
+        acres = info_base.xpath("/div[3]/ul/li[4]/text()")
+        print(acres)
+        #Go back one page. 
+        self.driver.execute_script("window.history.go(-1)")
+        
+        #Write the values to txt file. 
+        
+        filename = "homie_data.txt"
+        f = open(filename, 'a+')
+
+        for m in values:
+            f.write("%s\n" % m)
+        f.close()
       
 class zillow(scrapy.Spider):
     
