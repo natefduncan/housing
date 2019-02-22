@@ -115,13 +115,11 @@ class homie(scrapy.Spider):
             
     def parse(self, response):
         
-        self.driver.get(response.url)
-        
         page_wait = WebDriverWait(self.driver, 60)
         areas = ["Dallas, TX", "Frisco, TX"]
         
         for i in areas: 
-            
+            self.driver.get(response.url)
             try:
                 element = WebDriverWait(self.driver, 20).until(
                     EC.presence_of_element_located((By.ID, 'rdc-main-search-nav-hero-input'))
@@ -151,7 +149,7 @@ class homie(scrapy.Spider):
               base = "https://www.realtor.com/"
               link = base + link
               yield scrapy.Request(url=link, callback=self.parse2)
-              
+              time.sleep(5)
               counter += 1
               
     def parse2(self, response):
@@ -181,18 +179,7 @@ class homie(scrapy.Spider):
         print(sq_ft)
         acres = info_base.xpath("/div[3]/ul/li[4]/text()")
         print(acres)
-        #Go back one page. 
-        self.driver.execute_script("window.history.go(-1)")
-        
-        #Write the values to txt file. 
-        
-        filename = "homie_data.txt"
-        f = open(filename, 'a+')
 
-        for m in values:
-            f.write("%s\n" % m)
-        f.close()
-      
 class zillow(scrapy.Spider):
     
     name = "zillow"
