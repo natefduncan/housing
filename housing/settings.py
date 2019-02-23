@@ -64,7 +64,22 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'random_useragent.RandomUserAgentMiddleware': 400,
     'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
-    'rotating_proxies.middlewares.BanDetectionMiddleware' : 620}
+    'rotating_proxies.middlewares.BanDetectionMiddleware' : 620,
+    'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
+    'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
+    'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,}
+
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
+RETRY_TIMES = 0
+
+# PROXY
+PROXY = 'http://127.0.0.1:8888/?noconnect'
+
+# SCRAPOXY
+API_SCRAPOXY = 'http://127.0.0.1:8889/api'
+API_SCRAPOXY_PASSWORD = 'mhnnh7v201!'
+
 
 USER_AGENTS = [
     ('Mozilla/5.0 (X11; Linux x86_64) '
