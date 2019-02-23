@@ -61,12 +61,15 @@ DOWNLOAD_DELAY = 3
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 
 DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'random_useragent.RandomUserAgentMiddleware': 400,
     'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
     'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
-    'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,}
+    'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,}
 
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
-RETRY_TIMES = 15
+RETRY_TIMES = 0
 
 # PROXY
 PROXY = 'http://127.0.0.1:8888/?noconnect'
@@ -117,7 +120,7 @@ ROTATING_PROXY_LIST_PATH = str(path) + "/housing/spiders/proxy_list.txt"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
 #AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
