@@ -60,13 +60,16 @@ DOWNLOAD_DELAY = 3
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 
+# BLACKLISTING
+BLACKLIST_HTTP_STATUS_CODES = [ 503 ]
+
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-    'random_useragent.RandomUserAgentMiddleware': 400,
     'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
     'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
     'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
-    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,}
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    'scrapoxy.downloadmiddlewares.blacklist.BlacklistDownloaderMiddleware': 950,
+}
 
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
 RETRY_TIMES = 0
