@@ -63,8 +63,6 @@ DOWNLOAD_DELAY = 3
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'random_useragent.RandomUserAgentMiddleware': 400,
-    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
-    'rotating_proxies.middlewares.BanDetectionMiddleware' : 620,
     'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
     'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
     'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
