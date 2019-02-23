@@ -66,7 +66,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,}
 
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
-RETRY_TIMES = 0
+RETRY_TIMES = 15
 
 # PROXY
 PROXY = 'http://127.0.0.1:8888/?noconnect'
