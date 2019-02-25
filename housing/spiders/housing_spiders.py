@@ -113,13 +113,15 @@ class homie(scrapy.Spider):
         for i in areas:
           counter = 1
           try:
-            yield scrapy.Request(url=(base+i+("/pg-%s") % str(counter)), callback = self.parse)
+            url = (base+i+("/pg-%s") % str(counter))
+            print(url)
+            yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(10)
           except:
             self.driver.close()
             
     def parse(self, response):
-        self.driver.get(response)
+        self.driver.get(response.url)
         
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
         time.sleep(5)
