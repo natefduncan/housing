@@ -184,71 +184,71 @@ class zillow(scrapy.Spider):
         
         self.driver.get(response.url)
 
-            time.sleep(np.random.uniform(2, 5, 1))
-            
-            def wait_for(condition_function):
-                start_time = time.time()
-                while time.time() < start_time + 3:
-                    if condition_function():
-                        return True
-                    else:
-                        time.sleep(0.1)
-                raise Exception(
-                    'Timeout waiting for {}'.format(condition_function.__name__)
-                )
-            
-            def click_through_to_new_page(link_object):
-                self.driver.execute_script("arguments[0].click();", link_object)
-            
-                def link_has_gone_stale():
-                    try:
-                        # poll the link with an arbitrary call
-                        link_object.find_elements_by_id('doesnt-matter') 
-                        return False
-                    except:
-                        return True
-            
-                wait_for(link_has_gone_stale)
-            
-            go = True 
-            
-            while go:
-                response = scrapy.Selector(text=self.driver.page_source)
-                
-                if not bool(response.xpath('//li[@class = "zsg-pagination-next"]/a')):
-                    go = False
-                
-                if go: 
-                    nxt = self.driver.find_element_by_xpath('//li[@class = "zsg-pagination-next"]/a')
-                
-                x = response.xpath('//article[starts-with(@id, "zpid")]')
-            
-                values = []
-                
-                for i in x:
-                    photos = i.xpath('div[1]/a/@href').extract()
-                    photos = [ucode(t) for t in photos]
-                    specs = i.xpath('div[1]/div[1]/p/span/text()').extract()
-                    specs = [remove_comma(ucode(j)) for j in specs]
-                    while len(specs) != 6:
-                        specs.append("NaN")
-                    values.append([photos, specs])
-                
-                values = [flatten(n) for n in values]
-                
-                #Write the values to txt file. 
-                
-                filename = "texas.txt"
-                f = open(filename, 'a+')
+        time.sleep(np.random.uniform(2, 5, 1))
         
-                for m in values:
-                    f.write("%s\n" % m)
-                f.close()
+        def wait_for(condition_function):
+            start_time = time.time()
+            while time.time() < start_time + 3:
+                if condition_function():
+                    return True
+                else:
+                    time.sleep(0.1)
+            raise Exception(
+                'Timeout waiting for {}'.format(condition_function.__name__)
+            )
+        
+        def click_through_to_new_page(link_object):
+            self.driver.execute_script("arguments[0].click();", link_object)
+        
+            def link_has_gone_stale():
+                try:
+                    # poll the link with an arbitrary call
+                    link_object.find_elements_by_id('doesnt-matter') 
+                    return False
+                except:
+                    return True
+        
+            wait_for(link_has_gone_stale)
+        
+        go = True 
+        
+        while go:
+            response = scrapy.Selector(text=self.driver.page_source)
+            
+            if not bool(response.xpath('//li[@class = "zsg-pagination-next"]/a')):
+                go = False
+            
+            if go: 
+                nxt = self.driver.find_element_by_xpath('//li[@class = "zsg-pagination-next"]/a')
+            
+            x = response.xpath('//article[starts-with(@id, "zpid")]')
+        
+            values = []
+            
+            for i in x:
+                photos = i.xpath('div[1]/a/@href').extract()
+                photos = [ucode(t) for t in photos]
+                specs = i.xpath('div[1]/div[1]/p/span/text()').extract()
+                specs = [remove_comma(ucode(j)) for j in specs]
+                while len(specs) != 6:
+                    specs.append("NaN")
+                values.append([photos, specs])
+            
+            values = [flatten(n) for n in values]
+            
+            #Write the values to txt file. 
+            
+            filename = "texas.txt"
+            f = open(filename, 'a+')
+    
+            for m in values:
+                f.write("%s\n" % m)
+            f.close()
+            
+            if go:
+                click_through_to_new_page(nxt) 
+                time.sleep(2)
                 
-                if go:
-                    click_through_to_new_page(nxt) 
-                    time.sleep(2)
-                    
         self.driver.close()
         
 class trulia(scrapy.Spider):
