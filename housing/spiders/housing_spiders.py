@@ -115,9 +115,8 @@ class homie(scrapy.Spider):
           try:
             url = (base+i+("/pg-%s") % str(counter))
             print(url)
-            self.driver.get(url)
             yield scrapy.Request(url=url, callback = self.parse)
-            time.sleep(10)
+            time.sleep(5)
           except:
             self.driver.close()
             
