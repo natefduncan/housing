@@ -124,7 +124,6 @@ class homie(scrapy.Spider):
         self.driver.get(response.url)
         
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
-        time.sleep(5)
         
         response = scrapy.Selector(text=self.driver.page_source)
         rows = response.xpath(cards_path)
@@ -267,7 +266,7 @@ class trulia(scrapy.Spider):
 
         #FOR SELENIUM
         
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Firefox()
         #self.driver.set_window_size(1920, 1080)
         
         #Start Headless Chrome
