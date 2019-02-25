@@ -115,6 +115,7 @@ class homie(scrapy.Spider):
           try:
             url = (base+i+("/pg-%s") % str(counter))
             print(url)
+            self.driver.get(url)
             yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(10)
           except:
@@ -124,6 +125,13 @@ class homie(scrapy.Spider):
         self.driver.get(response.url)
         
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
+        
+        try:
+            element = WebDriverWait(self.driver, 120).until(
+                EC.presence_of_element_located((By.XPATH, cards_path))
+            )
+        except:
+            self.driver.close()
         
         response = scrapy.Selector(text=self.driver.page_source)
         rows = response.xpath(cards_path)
