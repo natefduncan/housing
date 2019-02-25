@@ -148,37 +148,9 @@ class homie(scrapy.Spider):
               link = response.xpath(link_path).extract()[0]
               base = "https://www.realtor.com/"
               link = base + link
-              yield scrapy.Request(url=link, callback=self.parse2)
-              time.sleep(5)
+              print(link)
               counter += 1
-              
-    def parse2(self, response):
-      
-        self.driver.get(response.url)
-        page_wait = WebDriverWait(self.driver, 60)
-        info_base_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]"
-          
-        page_wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.loader"))) #Wait for the page to load. 
-        
-        response = scrapy.Selector(text=self.driver.page_source)
-        
-        info_base = response.xpath(info_base_xpath)
-        
-        print(info_base)
-        price = info_base.xpath("/div[1]/div/span/text()").extract()
-        print(price)
-        address = info_base.xpath("/div[2]/h2/text()")
-        print(address)
-        city = info_base.xpath("/div[2]/h2/span/text()")
-        print(city)
-        bed = info_base.xpath("/div[3]/ul/li[1]/text()")
-        print(bed)
-        bath = info_base.xpath("/div[3]/ul/li[2]/text()")
-        print(bath)
-        sq_ft = info_base.xpath("/div[3]/ul/li[3]/text()")
-        print(sq_ft)
-        acres = info_base.xpath("/div[3]/ul/li[4]/text()")
-        print(acres)
+            
 
 class zillow(scrapy.Spider):
     
