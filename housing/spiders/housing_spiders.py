@@ -149,8 +149,12 @@ class homie(scrapy.Spider):
 class zillow(scrapy.Spider):
     
     name = "zillow"
+    
     start_urls = [
-        'https://www.zillow.com',
+        'https://www.zillow.com/dallas-tx',
+        'https://www.zillow.com/Frisco-tx',
+        'https://www.zillow.com/carrolton-tx',
+        'https://www.zillow.com/prosper-tx'
         ]
     
     def __init__(self):
@@ -179,27 +183,7 @@ class zillow(scrapy.Spider):
     def parse(self, response):
         
         self.driver.get(response.url)
-        
-        areas = ["Dallas, TX", "Frisco, TX",  "Addision, TX"]
-        
-        #areas = ['Mesa, AZ']
-        
-        for i in areas: 
-            
-            try:
-                element = WebDriverWait(self.driver, 120).until(
-                    EC.presence_of_element_located((By.ID, 'citystatezip'))
-                )
-            except:
-                self.driver.close()
-            
-            #Enters value into the search bar. 
-            search = self.driver.find_element_by_id('citystatezip')
-            search.clear()
-            search.send_keys(i)
-            button = self.driver.find_element_by_xpath('//body/div[@id = "wrapper"]/div[@class = "zsg-nav-sub-wrapper"]/div[1]/div[1]/ul/li[1]/form/div[@class = "zsg-searchbox-content-container"]/button')
-            button.click()
-            
+
             time.sleep(np.random.uniform(2, 5, 1))
             
             def wait_for(condition_function):
@@ -263,6 +247,7 @@ class zillow(scrapy.Spider):
                 
                 if go:
                     click_through_to_new_page(nxt) 
+                    time.sleep(2)
                     
         self.driver.close()
         
