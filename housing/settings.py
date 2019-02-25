@@ -64,6 +64,9 @@ DOWNLOAD_DELAY = 3
 BLACKLIST_HTTP_STATUS_CODES = [ 503 ]
 
 DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+    'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
 
 
@@ -103,10 +106,11 @@ ROTATING_PROXY_LIST_PATH = str(path) + "/housing/spiders/proxy_list.txt"
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+'''
 ITEM_PIPELINES = {
     'housing.pipelines.CsvPipeline': 300,
 }
-
+'''
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 AUTOTHROTTLE_ENABLED = True
