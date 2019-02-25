@@ -108,48 +108,41 @@ class homie(scrapy.Spider):
             pass
         '''
     def start_requests(self):
-    
-        base = "https://www.realtor.com/realestateforsale"
-         
-        yield scrapy.Request(url=base, callback = self.parse)
+        areas = ["Dallas_TX", "Frisco_TX"]
+        base = "https://www.realtor.com/realestateandhomes-search/"
+        for i in areas:
+          counter = 1
+          try:
+            yield scrapy.Request(url=(base+i+("/pg-%s") % str(counter)), callback = self.parse)
+            time.sleep(10)
+          except:
+            self.driver.close()
             
     def parse(self, response):
+            
+        #Enters value into the search bar. 
+        search = self.driver.find_element_by_id('rdc-main-search-nav-hero-input')
+        search.clear()
+        search.send_keys(i)
+        button_path = "//html/body/div[1]/div/div/section[1]/div[2]/div/div/form/button"
+        button = self.driver.find_element_by_xpath(button_path)
+        button.click()
+        time.sleep(2)
         
-        page_wait = WebDriverWait(self.driver, 60)
-        areas = ["Dallas, TX", "Frisco, TX"]
+        cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
+        time.sleep(5)
         
-        for i in areas: 
-            self.driver.get(response.url)
-            try:
-                element = WebDriverWait(self.driver, 20).until(
-                    EC.presence_of_element_located((By.ID, 'rdc-main-search-nav-hero-input'))
-                )
-            except:
-                self.driver.close()
-            
-            #Enters value into the search bar. 
-            search = self.driver.find_element_by_id('rdc-main-search-nav-hero-input')
-            search.clear()
-            search.send_keys(i)
-            button_path = "//html/body/div[1]/div/div/section[1]/div[2]/div/div/form/button"
-            button = self.driver.find_element_by_xpath(button_path)
-            button.click()
-            time.sleep(2)
-            
-            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
-            time.sleep(5)
-            
-            response = scrapy.Selector(text=self.driver.page_source)
-            rows = response.xpath(cards_path)
-            values = []
-            counter = 1 #Don't know why this is. 
-            for i in rows:
-              link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
-              link = response.xpath(link_path).extract()[0]
-              base = "https://www.realtor.com/"
-              link = base + link
-              print(link)
-              counter += 1
+        response = scrapy.Selector(text=self.driver.page_source)
+        rows = response.xpath(cards_path)
+        values = []
+        counter = 1 #Don't know why this is. 
+        for i in rows:
+          link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
+          link = response.xpath(link_path).extract()[0]
+          base = "https://www.realtor.com/"
+          link = base + link
+          print(link)
+          counter += 1
             
 
 class zillow(scrapy.Spider):
