@@ -119,15 +119,7 @@ class homie(scrapy.Spider):
             self.driver.close()
             
     def parse(self, response):
-            
-        #Enters value into the search bar. 
-        search = self.driver.find_element_by_id('rdc-main-search-nav-hero-input')
-        search.clear()
-        search.send_keys(i)
-        button_path = "//html/body/div[1]/div/div/section[1]/div[2]/div/div/form/button"
-        button = self.driver.find_element_by_xpath(button_path)
-        button.click()
-        time.sleep(2)
+        self.driver.get(response)
         
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
         time.sleep(5)
