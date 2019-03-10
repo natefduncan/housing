@@ -14,6 +14,7 @@ import unicodedata as uc
 import time
 import numpy as np
 from pathlib import Path
+import datetime as dt
 
 #FOR SELENIUM
 
@@ -116,7 +117,7 @@ class homie(scrapy.Spider):
             url = (base+i+("/pg-%s") % str(counter))
             print(url)
             yield scrapy.Request(url=url, callback = self.parse)
-            time.sleep(5)
+            time.sleep(10)
           except:
             self.driver.close()
             
@@ -135,13 +136,17 @@ class homie(scrapy.Spider):
         response = scrapy.Selector(text=self.driver.page_source)
         rows = response.xpath(cards_path)
         values = []
-        counter = 1 #Don't know why this is. 
+        counter = 1 #Don't know why this is.
         for i in rows:
           link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
           link = response.xpath(link_path).extract()[0]
           base = "https://www.realtor.com/"
           link = base + link
-          print(link)
+          now = dt.datetime.now()
+          file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+          with open(file_name, "a+") as file:
+            file.write(link)
+            print("Added: " + link)
           counter += 1
             
 
