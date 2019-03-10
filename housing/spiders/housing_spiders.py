@@ -113,16 +113,14 @@ class homie(scrapy.Spider):
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
           counter = 1
-          try:
+          for j in range(0, 130):
             url = (base+i+("/pg-%s") % str(counter))
-            print(url)
             yield scrapy.Request(url=url, callback = self.parse)
-            time.sleep(10)
-          except:
-            self.driver.close()
+            counter += 1
             
     def parse(self, response):
         self.driver.get(response.url)
+        print(response.url)
         
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
         
@@ -146,6 +144,7 @@ class homie(scrapy.Spider):
           file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
           with open(file_name, "a+") as file:
             file.write(link)
+            file.write("\n")
             print("Added: " + link)
           counter += 1
             
