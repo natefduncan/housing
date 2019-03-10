@@ -908,3 +908,154 @@ Xlib:  extension "XInputExtension" missing on display ":1.0".
 [Child 4021] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
 [Child 4021] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 4021] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552248293324	geckodriver	INFO	Listening on 127.0.0.1:37749
+1552248294925	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552248299020	Marionette	INFO	Listening on port 33255
+1552248299482	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 4284] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 4284] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552249488346	geckodriver	INFO	Listening on 127.0.0.1:39769
+1552249489951	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552249494150	Marionette	INFO	Listening on port 33573
+1552249494610	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 872: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 872: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://c.amazon-adsystem.com/aax2/apstag.js, line 2: TypeError: O.hasAdServerObjectLoaded is not a function
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 872: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 872: NS_ERROR_NOT_INITIALIZED: 
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
