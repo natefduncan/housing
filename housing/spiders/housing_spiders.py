@@ -8,14 +8,15 @@ SCRAPING HOUSING DATA
 @author: User
 """
 
-import scrapy
-import os
-import unicodedata as uc
-import time
-import numpy as np
-from pathlib import Path
-import datetime as dt
-import math
+import scrapy #Framework for scraping
+import os #For working with files
+import unicodedata as uc #Unicode to string
+import time #For pausing code
+import numpy as np #For working with arrays
+from pathlib import Path #For working with system independent paths
+import datetime as dt #For working with and converting times
+import math #For some math functions
+import pandas as pd #For working with dataframes
 
 #FOR SELENIUM
 
@@ -85,7 +86,7 @@ def remove_comma(x):
     return "".join(output)
 
 
-class homie(scrapy.Spider):
+class realtor(scrapy.Spider):
     
     name = "realtor"
     start_urls = [
@@ -161,6 +162,52 @@ class homie(scrapy.Spider):
               counter += 1
             page_counter += 1
             print("finished")
+
+class realtor_data(scrapy.Spider):
+  name = "realtor_data"
+  
+  def __init__(self):
+  
+  def start_urls(self):
+    now = dt.datetime.now()
+    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+    with open(file_name) as f:
+      urls = f.readlines()
+      # you may also want to remove whitespace characters like `\n` at the end of each line
+      urls = [x.strip().replace("\n", "") for x in urls]
+    for url in urls:
+      yield scrapy.Response(url=url, callback=parse)
+    
+    
+  def parse(self, response):
+    price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
+    address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/text()"
+    bed_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[1]/text()"
+    bath_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[2]/text()"
+    sq_ft_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[3]/text()"
+    acres_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[4]/text()"
+    status_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[1]/li/div[2]/text()"
+    price_per_sq_ft_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[2]/li/div[2]/text()"
+    days_on_realtor_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[3]/li/div[2]/text()"
+    type_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[4]/li/div[2]/text()"
+    built_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[5]/li/div[2]/text()"
+    description_xpath = "//*[@id='ldp-detail-romance']/text()"
+    
+    columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
+    
+    print(response.xpath(price_xpath))
+    print(response.xpath(address_xpath))
+    print(response.xpath(bed_xpath))
+    print(response.xpath(bath_xpath))
+    print(response.xpath(sq_ft_xpath))
+    print(response.xpath(acres_xpath))
+    print(response.xpath(status_xpath))
+    print(response.xpath(price_per_sq_ft_xpath))
+    print(response.xpath(days_on_realtor_xpath))
+    print(response.xpath(type_xpath))
+    print(response.xpath(built_xpath))
+    print(response.xpath(description_xpath))
+    
             
 
 class zillow(scrapy.Spider):
