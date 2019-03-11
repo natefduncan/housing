@@ -149,6 +149,7 @@ class homie(scrapy.Spider):
             for i in rows:
               link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
               link = response.xpath(link_path).extract()[0]
+              link = link.encode('utf-8').strip()
               base_url = "https://www.realtor.com"
               link = base_url + link
               now = dt.datetime.now()
