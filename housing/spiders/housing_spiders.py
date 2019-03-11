@@ -181,7 +181,7 @@ class realtor_data(scrapy.Spider):
       yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
-    self.driver.get(url)
+    self.driver.get(response.url)
     price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
 
     try:
