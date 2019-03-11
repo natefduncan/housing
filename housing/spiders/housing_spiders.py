@@ -129,6 +129,7 @@ class homie(scrapy.Spider):
             print("-" * 30)
             url = (base+j+("/pg-%s") % str(page_counter))
             self.driver.get(url)
+            time.sleep(5)
         
             pages_path = "//*[@id='search-result-count']/text()"
             cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
