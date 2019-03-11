@@ -182,6 +182,7 @@ class realtor_data(scrapy.Spider):
     
   def parse(self, response):
     self.driver.get(response.url)
+    url = response.url
     price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"
 
     try:
@@ -206,7 +207,7 @@ class realtor_data(scrapy.Spider):
     
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
-    print(response.url)
+    print(url)
     print(response.xpath(price_xpath).extract())
     print(response.xpath(address_xpath).extract())
     print(response.xpath(bed_xpath).extract())
