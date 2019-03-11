@@ -89,7 +89,7 @@ class homie(scrapy.Spider):
     
     name = "realtor"
     start_urls = [
-        'www.realtor.com'
+        'https://www.realtor.com'
     ]
     
     def __init__(self):
