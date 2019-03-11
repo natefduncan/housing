@@ -100,10 +100,7 @@ class homie(scrapy.Spider):
         #client.containers.run("scrapinghub/splash", detach = True)
         
         #FOR SELENIUM
-        firefox_profile = webdriver.FirefoxProfile()
-        firefox_profile.set_preference('permissions.default.image', 2)
-        firefox_profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', False)
-        self.driver = webdriver.Firefox(firefox_profile=firefox_profile)
+        self.driver = webdriver.Firefox()
         
         #self.driver.set_window_size(1920, 1080)
         '''
