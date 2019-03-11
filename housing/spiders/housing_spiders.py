@@ -182,7 +182,7 @@ class realtor_data(scrapy.Spider):
     
   def parse(self, response):
     self.driver.get(response.url)
-    price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
+    price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"
 
     try:
         element = WebDriverWait(self.driver, 120).until(
