@@ -126,8 +126,7 @@ class homie(scrapy.Spider):
             print(pages)
             print("-" * 30)
             url = (base+i+("/pg-%s") % str(page_counter))
-            self.driver.get(url)
-            yield scrapy.Request(url=url, callback = self.parse)
+            yield scrapy.Request(url=url, callback=self.parse)
             time.sleep(5)
             
     def parse(self, response):
