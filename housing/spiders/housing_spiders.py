@@ -175,7 +175,7 @@ class realtor_data(scrapy.Spider):
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     for url in urls:
-      yield scrapy.Request(url=url, callback=parse)
+      yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
     price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
