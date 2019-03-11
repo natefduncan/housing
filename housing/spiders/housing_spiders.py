@@ -138,7 +138,7 @@ class homie(scrapy.Spider):
         response = scrapy.Selector(text=self.driver.page_source)
 
         global pages
-        pages = math.ceil(int(response.xpath(pages_path).extract()[0].replace(",", "").split(" ")[0]) / float(43.8))
+        pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0]) / float(43.8))
         print(pages)
         rows = response.xpath(cards_path)
         values = []
