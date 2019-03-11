@@ -194,18 +194,18 @@ class realtor_data(scrapy.Spider):
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
     print(response.url)
-    print(response.xpath(price_xpath))
-    print(response.xpath(address_xpath))
-    print(response.xpath(bed_xpath))
-    print(response.xpath(bath_xpath))
-    print(response.xpath(sq_ft_xpath))
-    print(response.xpath(acres_xpath))
-    print(response.xpath(status_xpath))
-    print(response.xpath(price_per_sq_ft_xpath))
-    print(response.xpath(days_on_realtor_xpath))
-    print(response.xpath(type_xpath))
-    print(response.xpath(built_xpath))
-    print(response.xpath(description_xpath))
+    print(response.xpath(price_xpath).extract())
+    print(response.xpath(address_xpath).extract())
+    print(response.xpath(bed_xpath).extract())
+    print(response.xpath(bath_xpath).extract())
+    print(response.xpath(sq_ft_xpath).extract())
+    print(response.xpath(acres_xpath).extract())
+    print(response.xpath(status_xpath).extract())
+    print(response.xpath(price_per_sq_ft_xpath).extract())
+    print(response.xpath(days_on_realtor_xpath).extract())
+    print(response.xpath(type_xpath).extract())
+    print(response.xpath(built_xpath).extract())
+    print(response.xpath(description_xpath).extract())
     
 class zillow(scrapy.Spider):
     
