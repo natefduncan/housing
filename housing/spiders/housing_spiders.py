@@ -116,18 +116,18 @@ class homie(scrapy.Spider):
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
-          counter = 1
+          global page_counter
+          page_counter = 1
           global pages
           pages = 100
-          while counter <= pages:
+          while page_counter <= pages:
             print("-" * 30)
-            print(counter)
+            print(page_counter)
             print(pages)
             print("-" * 30)
             url = (base+i+("/pg-%s") % str(counter))
             yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(5)
-            counter += 1
             
     def parse(self, response):
         self.driver.get(response.url)
@@ -161,7 +161,8 @@ class homie(scrapy.Spider):
             file.write(link)
             file.write("\n")
             print("Added: " + link)
-          counter += 1
+          global page_counter
+          page_counter += 1
             
 
 class zillow(scrapy.Spider):
