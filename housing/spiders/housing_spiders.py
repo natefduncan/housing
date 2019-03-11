@@ -163,6 +163,8 @@ class homie(scrapy.Spider):
             file.write("\n")
             print("Added: " + link)
           counter += 1
+          global page_counter
+          page_counter += 1
             
 
 class zillow(scrapy.Spider):
