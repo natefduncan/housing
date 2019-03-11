@@ -88,6 +88,9 @@ def remove_comma(x):
 class homie(scrapy.Spider):
     
     name = "realtor"
+    start_urls = (
+        'http://realtor.com'
+    )
     
     def __init__(self):
         
@@ -112,13 +115,12 @@ class homie(scrapy.Spider):
         except:
             pass
         '''
-    def start_requests(self):
+            
+    def parse(self, response):
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
-          global page_counter
           page_counter = 1
-          global pages
           pages = 100
           while page_counter <= pages:
             print("-" * 30)
@@ -126,45 +128,40 @@ class homie(scrapy.Spider):
             print(pages)
             print("-" * 30)
             url = (base+i+("/pg-%s") % str(page_counter))
-            yield scrapy.Request(url=url, callback=self.parse)
-            time.sleep(5)
+            self.driver.get(url)
+        
+            pages_path = "//*[@id='search-result-count']/text()"
+            cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
             
-    def parse(self, response):
-        self.driver.get(response.url)
-        
-        pages_path = "//*[@id='search-result-count']/text()"
-        cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
-        
-        try:
-            element = WebDriverWait(self.driver, 120).until(
-                EC.presence_of_element_located((By.XPATH, cards_path))
-            )
-        except:
-            self.driver.close()
-        
-        response = scrapy.Selector(text=self.driver.page_source)
+            try:
+                element = WebDriverWait(self.driver, 120).until(
+                    EC.presence_of_element_located((By.XPATH, cards_path))
+                )
+            except:
+                self.driver.close()
+            
+            response = scrapy.Selector(text=self.driver.page_source)
+            
+            #Get the actual number of pages. 
+            pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
 
-        global pages
-        pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
-        print(pages)
-        rows = response.xpath(cards_path)
-        values = []
-        counter = 1 #Don't know why this is.
-        for i in rows:
-          link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
-          link = response.xpath(link_path).extract()[0]
-          base = "https://www.realtor.com/"
-          link = base + link
-          now = dt.datetime.now()
-          file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
-          with open(file_name, "a+") as file:
-            file.write(link)
-            file.write("\n")
-            print("Added: " + link)
-          counter += 1
-          global page_counter
-          page_counter += 1
-          print("finished")
+            rows = response.xpath(cards_path)
+            
+            counter = 1 
+            for i in rows:
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
+              link = response.xpath(link_path).extract()[0]
+              base = "https://www.realtor.com/"
+              link = base + link
+              now = dt.datetime.now()
+              file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+              with open(file_name, "a+") as file:
+                file.write(link)
+                file.write("\n")
+                print("Added: " + link)
+              counter += 1
+              page_counter += 1
+              print("finished")
             
 
 class zillow(scrapy.Spider):
