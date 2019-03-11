@@ -2684,3 +2684,323 @@ JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/cont
 JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
 JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
 JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+1552300579220	geckodriver	INFO	Listening on 127.0.0.1:48233
+1552300581870	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552300588840	Marionette	INFO	Listening on port 35525
+1552300589506	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4600AB,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+1552301540971	geckodriver	INFO	Listening on 127.0.0.1:59061
+1552301543064	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552301549706	Marionette	INFO	Listening on port 44913
+1552301550346	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 872: NS_ERROR_NOT_INITIALIZED: 
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+[Child 1756] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1756] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552307459029	geckodriver	INFO	Listening on 127.0.0.1:46913
+1552307461502	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552307469316	Marionette	INFO	Listening on port 33221
+1552307470056	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 3273] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3273] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+1552307543895	geckodriver	INFO	Listening on 127.0.0.1:43257
+1552307545709	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552307551362	Marionette	INFO	Listening on port 45057
+1552307552014	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 3419] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3419] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552307722631	geckodriver	INFO	Listening on 127.0.0.1:37429
+1552307725073	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552307733004	Marionette	INFO	Listening on port 35877
+1552307733772	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4,name=PAPZCTreeManager::Msg_UpdateZoomConstraints) Channel error: cannot send/recv
+
+[Child 3583] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3583] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552307906496	geckodriver	INFO	Listening on 127.0.0.1:38473
+1552307909354	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552307917264	Marionette	INFO	Listening on port 35027
+1552307918034	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 3742] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3742] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
