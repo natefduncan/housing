@@ -149,8 +149,8 @@ class homie(scrapy.Spider):
             for i in rows:
               link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
               link = response.xpath(link_path).extract()[0]
-              base = "https://www.realtor.com/"
-              link = base + link
+              base_url = "https://www.realtor.com/"
+              link = base_url + link
               now = dt.datetime.now()
               file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
               with open(file_name, "a+") as file:
