@@ -88,9 +88,9 @@ def remove_comma(x):
 class homie(scrapy.Spider):
     
     name = "realtor"
-    start_urls = (
-        'http://realtor.com'
-    )
+    start_urls = [
+        'www.realtor.com'
+    ]
     
     def __init__(self):
         
