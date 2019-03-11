@@ -171,10 +171,10 @@ class realtor_data(scrapy.Spider):
     file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
     with open(file_name) as f:
       urls = f.readlines()
-      print(urls)
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     for url in urls:
+      print(url)
       yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
