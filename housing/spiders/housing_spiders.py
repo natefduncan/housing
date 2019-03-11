@@ -119,7 +119,7 @@ class homie(scrapy.Spider):
     def parse(self, response):
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
-        for i in areas:
+        for j in areas:
           page_counter = 1
           pages = 100
           while page_counter <= pages:
@@ -127,7 +127,7 @@ class homie(scrapy.Spider):
             print(page_counter)
             print(pages)
             print("-" * 30)
-            url = (base+i+("/pg-%s") % str(page_counter))
+            url = (base+j+("/pg-%s") % str(page_counter))
             self.driver.get(url)
         
             pages_path = "//*[@id='search-result-count']/text()"
@@ -143,7 +143,7 @@ class homie(scrapy.Spider):
             response = scrapy.Selector(text=self.driver.page_source)
             
             #Get the actual number of pages. 
-            pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
+            pages = int(math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8)))
 
             rows = response.xpath(cards_path)
             
