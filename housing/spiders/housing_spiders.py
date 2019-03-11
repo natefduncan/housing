@@ -15,6 +15,7 @@ import time
 import numpy as np
 from pathlib import Path
 import datetime as dt
+import math
 
 #FOR SELENIUM
 
@@ -124,7 +125,7 @@ class homie(scrapy.Spider):
     def parse(self, response):
         self.driver.get(response.url)
         
-        pages_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/div[2]/div[1]/nav/span[5]/a/text()"
+        pages_path = "//*[@id='search-result-count']/text()"
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
         
         try:
@@ -135,8 +136,9 @@ class homie(scrapy.Spider):
             self.driver.close()
         
         response = scrapy.Selector(text=self.driver.page_source)
+
         global pages
-        pages = int(response.xpath(pages_path).extract()[0])
+        pages = math.ceil(response.xpath(pages_path).extract()[0] / float(43.8))
         print(pages)
         rows = response.xpath(cards_path)
         values = []
