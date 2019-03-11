@@ -117,7 +117,9 @@ class homie(scrapy.Spider):
           global pages
           pages = 100
           while counter <= pages:
+            self.driver.manage().timeouts().pageLoadTimeout(120), TimeUnit.SECONDS);
             print("-" * 30)
+            print(counter)
             print(pages)
             print("-" * 30)
             url = (base+i+("/pg-%s") % str(counter))
