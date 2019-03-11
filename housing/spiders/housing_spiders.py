@@ -115,8 +115,11 @@ class homie(scrapy.Spider):
         for i in areas:
           counter = 1
           global pages
-          pages = 2
+          pages = 100
           while counter <= pages:
+            print("-" * 30)
+            print(pages)
+            print("-" * 30)
             url = (base+i+("/pg-%s") % str(counter))
             yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(5)
