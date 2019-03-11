@@ -115,7 +115,7 @@ class homie(scrapy.Spider):
           counter = 1
           global pages
           pages = 1
-          for j in range(0, pages):
+          while counter =< pages
             url = (base+i+("/pg-%s") % str(counter))
             yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(5)
@@ -135,7 +135,8 @@ class homie(scrapy.Spider):
             self.driver.close()
         
         response = scrapy.Selector(text=self.driver.page_source)
-        pages = response.xpath(pages_path).extract()[0]
+        global pages
+        pages = int(response.xpath(pages_path).extract()[0])
         print(pages)
         rows = response.xpath(cards_path)
         values = []
