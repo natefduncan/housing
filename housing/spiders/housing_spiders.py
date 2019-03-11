@@ -193,7 +193,7 @@ class realtor_data(scrapy.Spider):
         self.driver.close()
     
     response = scrapy.Selector(text=self.driver.page_source)
-    address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/text()"
+    address_xpath = "//*[@id='ldp-address']/text()"
     bed_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[1]/span/text()"
     bath_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[2]/span/text()"
     sq_ft_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[3]/span/text()"
