@@ -166,8 +166,6 @@ class realtor(scrapy.Spider):
 class realtor_data(scrapy.Spider):
   name = "realtor_data"
   
-  def __init__(self):
-  
   def start_urls(self):
     now = dt.datetime.now()
     file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
@@ -208,8 +206,6 @@ class realtor_data(scrapy.Spider):
     print(response.xpath(built_xpath))
     print(response.xpath(description_xpath))
     
-            
-
 class zillow(scrapy.Spider):
     
     name = "zillow"
