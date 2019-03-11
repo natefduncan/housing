@@ -101,8 +101,7 @@ class homie(scrapy.Spider):
         firefox_profile.set_preference('permissions.default.image', 2)
         firefox_profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', False)
         self.driver = webdriver.Firefox(firefox_profile=firefox_profile)
-
-driver = webdriver.Firefox(firefox_profile=firefox_profile)
+        
         #self.driver.set_window_size(1920, 1080)
         '''
         #start Chrome
