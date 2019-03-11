@@ -97,8 +97,12 @@ class homie(scrapy.Spider):
         #client.containers.run("scrapinghub/splash", detach = True)
         
         #FOR SELENIUM
-        
-        self.driver = webdriver.Firefox()
+        firefox_profile = webdriver.FirefoxProfile()
+        firefox_profile.set_preference('permissions.default.image', 2)
+        firefox_profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', False)
+        self.driver = webdriver.Firefox(firefox_profile=firefox_profile)
+
+driver = webdriver.Firefox(firefox_profile=firefox_profile)
         #self.driver.set_window_size(1920, 1080)
         '''
         #start Chrome
@@ -117,7 +121,6 @@ class homie(scrapy.Spider):
           global pages
           pages = 100
           while counter <= pages:
-            self.driver.manage().timeouts().pageLoadTimeout(120), TimeUnit.SECONDS);
             print("-" * 30)
             print(counter)
             print(pages)
