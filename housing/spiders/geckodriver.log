@@ -1059,3 +1059,29 @@ Xlib:  extension "XInputExtension" missing on display ":1.0".
 Xlib:  extension "XInputExtension" missing on display ":1.0".
 Xlib:  extension "XInputExtension" missing on display ":1.0".
 Xlib:  extension "XInputExtension" missing on display ":1.0".
+1552262982819	geckodriver	INFO	Listening on 127.0.0.1:46151
+1552262984861	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552262989810	Marionette	INFO	Listening on port 43373
+1552262990346	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 9112] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 9112] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 9112] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552263261158	geckodriver	INFO	Listening on 127.0.0.1:50153
+1552263262809	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552263266982	Marionette	INFO	Listening on port 36373
+1552263267456	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+[Child 9318] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 9318] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 9318] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
