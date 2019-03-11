@@ -193,6 +193,7 @@ class realtor_data(scrapy.Spider):
     
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
+    print(response.url)
     print(response.xpath(price_xpath))
     print(response.xpath(address_xpath))
     print(response.xpath(bed_xpath))
