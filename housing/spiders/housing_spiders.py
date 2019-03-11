@@ -166,7 +166,7 @@ class realtor(scrapy.Spider):
 class realtor_data(scrapy.Spider):
   name = "realtor_data"
   
-  def start_urls(self):
+  def start_requests(self):
     now = dt.datetime.now()
     file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
     with open(file_name) as f:
@@ -176,7 +176,6 @@ class realtor_data(scrapy.Spider):
       urls = [x.strip().replace("\n", "") for x in urls]
     for url in urls:
       yield scrapy.Response(url=url, callback=parse)
-    
     
   def parse(self, response):
     price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
