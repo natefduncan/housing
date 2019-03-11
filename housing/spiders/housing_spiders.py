@@ -164,6 +164,7 @@ class homie(scrapy.Spider):
           counter += 1
           global page_counter
           page_counter += 1
+          print("finished")
             
 
 class zillow(scrapy.Spider):
