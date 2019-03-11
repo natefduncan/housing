@@ -166,6 +166,9 @@ class realtor(scrapy.Spider):
 class realtor_data(scrapy.Spider):
   name = "realtor_data"
   
+  def __init__(self):
+    self.driver = webdriver.Firefox()
+  
   def start_requests(self):
     now = dt.datetime.now()
     file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
@@ -178,7 +181,17 @@ class realtor_data(scrapy.Spider):
       yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
+    self.driver.get(url)
     price_xpath = "/html/body/div[5]/div[7]/div[1]/div[1]/div[2]/main/div[1]/section/div/div[2]/div[1]/div/span/text()"
+
+    try:
+        element = WebDriverWait(self.driver, 120).until(
+            EC.presence_of_element_located((By.XPATH, price_xpath))
+        )
+    except:
+        self.driver.close()
+    
+    response = scrapy.Selector(text=self.driver.page_source)
     address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/text()"
     bed_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[1]/text()"
     bath_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[2]/text()"
