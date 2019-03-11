@@ -116,6 +116,8 @@ class homie(scrapy.Spider):
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
+          
+          pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
           global page_counter
           page_counter = 1
           global pages
@@ -126,6 +128,7 @@ class homie(scrapy.Spider):
             print(pages)
             print("-" * 30)
             url = (base+i+("/pg-%s") % str(page_counter))
+            self.driver.get(url)
             yield scrapy.Request(url=url, callback = self.parse)
             time.sleep(5)
             
@@ -145,7 +148,7 @@ class homie(scrapy.Spider):
         response = scrapy.Selector(text=self.driver.page_source)
 
         global pages
-        pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
+        
         print(pages)
         rows = response.xpath(cards_path)
         values = []
@@ -161,8 +164,7 @@ class homie(scrapy.Spider):
             file.write(link)
             file.write("\n")
             print("Added: " + link)
-          global page_counter
-          page_counter += 1
+          counter += 1
             
 
 class zillow(scrapy.Spider):
