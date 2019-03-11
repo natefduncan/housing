@@ -109,7 +109,7 @@ class homie(scrapy.Spider):
             pass
         '''
     def start_requests(self):
-        areas = ["", "Dallas_TX"]
+        areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
           counter = 1
