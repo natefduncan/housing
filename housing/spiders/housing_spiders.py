@@ -116,8 +116,6 @@ class homie(scrapy.Spider):
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
-          
-          pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
           global page_counter
           page_counter = 1
           global pages
@@ -148,7 +146,7 @@ class homie(scrapy.Spider):
         response = scrapy.Selector(text=self.driver.page_source)
 
         global pages
-        
+        pages = math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8))
         print(pages)
         rows = response.xpath(cards_path)
         values = []
