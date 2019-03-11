@@ -109,19 +109,22 @@ class homie(scrapy.Spider):
             pass
         '''
     def start_requests(self):
-        areas = ["Dallas_TX", "Frisco_TX"]
+        areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for i in areas:
           counter = 1
-          for j in range(0, 130):
+          global pages
+          pages = 1
+          for j in range(0, pages):
             url = (base+i+("/pg-%s") % str(counter))
             yield scrapy.Request(url=url, callback = self.parse)
+            time.sleep(5)
             counter += 1
             
     def parse(self, response):
         self.driver.get(response.url)
-        print(response.url)
         
+        pages_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/div[2]/div[1]/nav/span[5]/a/text()"
         cards_path = "//html/body/div[5]/div[2]/div/div[1]/div[2]/section/div[2]/ul/li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]"
         
         try:
@@ -132,6 +135,8 @@ class homie(scrapy.Spider):
             self.driver.close()
         
         response = scrapy.Selector(text=self.driver.page_source)
+        pages = response.xpath(pages_path).extract()[0]
+        print(pages)
         rows = response.xpath(cards_path)
         values = []
         counter = 1 #Don't know why this is.
