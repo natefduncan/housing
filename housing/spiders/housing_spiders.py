@@ -193,34 +193,18 @@ class realtor_data(scrapy.Spider):
         self.driver.close()
     
     response = scrapy.Selector(text=self.driver.page_source)
-    all_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/text()"
     address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
-    bed_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[1]//text()"
-    bath_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[2]//text()"
-    sq_ft_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[3]//text()"
-    acres_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li[4]//text()"
-    status_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[1]/li/div[2]//text()"
-    price_per_sq_ft_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[2]/li/div[2]//text()"
-    days_on_realtor_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[3]/li/div[2]//text()"
-    type_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[4]/li/div[2]//text()"
-    built_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div/div[5]/li/div[2]//text()"
+    top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
+    bottom_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div//text()"
     description_xpath = "//*[@id='ldp-detail-romance']//text()"
 
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
     print(url)
-    print(response.xpath(all_xpath).extract())
     print(response.xpath(price_xpath).extract())
     print(response.xpath(address_xpath).extract())
-    print(response.xpath(bed_xpath).extract())
-    print(response.xpath(bath_xpath).extract())
-    print(response.xpath(sq_ft_xpath).extract())
-    print(response.xpath(acres_xpath).extract())
-    print(response.xpath(status_xpath).extract())
-    print(response.xpath(price_per_sq_ft_xpath).extract())
-    print(response.xpath(days_on_realtor_xpath).extract())
-    print(response.xpath(type_xpath).extract())
-    print(response.xpath(built_xpath).extract())
+    print(top_info_xpath(top_info_xpath).extract())
+    print(response.xpath(bottom_info_xpath).extract())
     print(response.xpath(description_xpath).extract())
     
 class zillow(scrapy.Spider):
