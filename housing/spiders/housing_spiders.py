@@ -47,7 +47,7 @@ def parse_address(x): #For Realtor
       output[0] = "".join([output[0], " ", output[1]])
       del output[1]
     if len(output) < 4:
-      for i in (4 - len(output)):
+      for i in range(0, 4 - len(output)):
         output.append("")
     return output
 
