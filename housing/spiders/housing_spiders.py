@@ -32,17 +32,85 @@ from pyvirtualdisplay import Display
 
 #import docker
 #from scrapy_splash import SplashRequest
-
-def get_address(x): #Gets address from returned html string. 
+    
+def parse_price(x): #For Realtor
+    return int(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", ""))
+    
+def parse_address(x): #For Realtor
     output = []
-    if len(x.split('\n')[0]) == 0:
-        y = x.split('\n')[1].split(' ')
-    else:
-        y = x.split('\n')[0].split(' ')
-    for i in y:
-        if i != '':
-            output.append(i)
-    return " ".join(output)
+    for i in x:
+        j = i.replace(",", "").replace("\n", "").strip()
+        if j != "": 
+            output.append(j)
+    return output
+
+def parse_top(x): #For Realtor
+    '''
+    options:
+    beds, baths, sq ft, sqft lot, acres lot, 3 full, 2 half baths
+    '''
+    
+    beds = ""
+    baths = ""
+    half_baths = ""
+    sq_ft = ""
+    sqft_lot = ""
+    acres_lot = ""
+    
+    for i in range(0, len(x)):
+        temp = x[i]
+        temp = temp.replace("\n", "").replace(",", "").strip()
+        if temp == "beds":
+            beds = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "full":
+            baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "baths":
+            baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "half baths":
+            half_baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "sq ft":
+            sq_ft = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "sqft lot":
+            sqft_lot = int(x[i-1].replace("\n", "").replace(",", "").strip())
+        elif temp == "acres lot":
+            acres_lot = int(x[i-1].replace("\n", "").replace(",", "").strip())
+    
+    return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
+
+def parse_bottom(x): #For Realtor
+    '''
+    status, price/sq_ft,on realtor, type, built, style, description
+    '''
+    
+    status = ""
+    price_sq_ft = ""
+    on_realtor = ""
+    tp = ""
+    built = ""
+    style = ""
+    descr = ""
+    
+    mx = max([len(i) for i in x])
+    
+    for i in range(0, len(x)):
+        temp = x[i]
+        temp = temp.replace("\n", "").replace(",", "").strip()
+        print(temp)
+        if temp == "Status":
+            status = x[i+2].replace("\n", "").replace(",", "").strip()
+        elif temp == "Price/Sq Ft":
+            price_sq_ft = int(x[i+2].replace("\n", "").replace(",", "").replace("$","").strip())
+        elif temp == "On realtor.com":
+            on_realtor = x[i+3].replace("\n", "").replace(",", "").strip()
+        elif temp == "Type":
+            tp = x[i+2].replace("\n", "").replace(",", "").strip()
+        elif temp == "Built":
+            built = int(x[i+2].replace("\n", "").replace(",", "").strip())
+        elif temp == "Style":
+            style = x[i+3].replace("\n", "").replace(",", "").strip()
+        elif len(x[i]) == mx:
+            descr = x[i].replace("\n", "").strip()
+    return [status, price_sq_ft, on_realtor, tp, built, style, descr]
 
 path = Path(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(str(path))
@@ -200,10 +268,10 @@ class realtor_data(scrapy.Spider):
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
     print(url)
-    print(response.xpath(price_xpath).extract())
-    print(response.xpath(address_xpath).extract())
-    print(response.xpath(top_info_xpath).extract())
-    print(response.xpath(description_xpath).extract())
+    print(parse_price(response.xpath(price_xpath).extract()))
+    print(parse_address(response.xpath(address_xpath).extract()))
+    print(parse_top(response.xpath(top_info_xpath).extract()))
+    print(parse_bottom(response.xpath(description_xpath).extract()))
     
 class zillow(scrapy.Spider):
     
