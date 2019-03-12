@@ -46,6 +46,9 @@ def parse_address(x): #For Realtor
     if len(output) > 4:
       output[0] = "".join([output[0], " ", output[1]])
       del output[1]
+    if len(output) < 4:
+      for i in (4 - len(output)):
+        output.append("")
     return output
 
 def parse_top(x): #For Realtor
