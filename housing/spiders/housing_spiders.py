@@ -16,7 +16,7 @@ import numpy as np #For working with arrays
 from pathlib import Path #For working with system independent paths
 import datetime as dt #For working with and converting times
 import math #For some math functions
-#import pandas as pd #For working with dataframes
+import pandas as pd #For working with dataframes
 
 #FOR SELENIUM
 
