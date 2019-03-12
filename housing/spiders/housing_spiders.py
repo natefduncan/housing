@@ -275,7 +275,8 @@ class realtor_data(scrapy.Spider):
       output = [now, url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
       print(output)
-      
+      print(len(output))
+      print(len(columns))
       df.loc[len(df)] = output
       
       if counter == 5:
