@@ -238,12 +238,6 @@ class realtor_data(scrapy.Spider):
     
   def __init__(self):
     self.driver = webdriver.Firefox()
-  
-  def start_requests(self):
-  
-    for url in urls:
-      print(url)
-      yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
     
@@ -274,7 +268,6 @@ class realtor_data(scrapy.Spider):
       address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
       top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
       description_xpath = "//*[@id='ldp-detail-overview']//text()"
-  
   
       pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
       
