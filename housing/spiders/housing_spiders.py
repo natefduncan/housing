@@ -195,8 +195,7 @@ class realtor_data(scrapy.Spider):
     response = scrapy.Selector(text=self.driver.page_source)
     address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
     top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
-    bottom_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div/ul/div[1]/div//text()"
-    description_xpath = "//*[@id='ldp-detail-romance']//text()"
+    description_xpath = "//*[@id='ldp-detail-overview']//text()"
 
     columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
     
@@ -204,7 +203,6 @@ class realtor_data(scrapy.Spider):
     print(response.xpath(price_xpath).extract())
     print(response.xpath(address_xpath).extract())
     print(response.xpath(top_info_xpath).extract())
-    print(response.xpath(bottom_info_xpath).extract())
     print(response.xpath(description_xpath).extract())
     
 class zillow(scrapy.Spider):
