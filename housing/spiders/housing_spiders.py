@@ -249,8 +249,16 @@ class realtor_data(scrapy.Spider):
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     
+    #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
+    pd_file_name = "realtor_data_2019.3.11.csv"
+    
     columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
+    try:
+      df = pd.read_csv(pd_file_name)
+      urls = [i for i in urls if i not in df.url.tolist()]
+    except:
+      pass
       
     counter = 1
     
@@ -269,9 +277,7 @@ class realtor_data(scrapy.Spider):
       address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
       top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
       description_xpath = "//*[@id='ldp-detail-overview']//text()"
-  
-      #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
-      pd_file_name = "realtor_data_2019.3.11.csv"
+ 
       output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
       for i in range(0, len(output)):
