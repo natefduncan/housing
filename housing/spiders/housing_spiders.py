@@ -249,7 +249,7 @@ class realtor_data(scrapy.Spider):
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     
-    columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
+    columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
       
     counter = 1
