@@ -249,6 +249,7 @@ class realtor_data(scrapy.Spider):
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     
+    columns = ["date_scraped", "url", "price", "address", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
       
     counter = 1
@@ -270,8 +271,6 @@ class realtor_data(scrapy.Spider):
       description_xpath = "//*[@id='ldp-detail-overview']//text()"
   
       pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
-      
-      columns = ["date_scraped", "url", "price", "address", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
       
       output = [now, url, parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
