@@ -292,12 +292,12 @@ class realtor_data(scrapy.Spider):
       df.loc[len(df)] = output
       
       if counter == 5:
-        df.to_csv(pd_file_name)
+        df.to_csv(pd_file_name, index = False)
         counter = 1
       else:
         counter += 1
       
-    df.to_csv(pd_file_name)
+    df.to_csv(pd_file_name, index = False)
     
 class zillow(scrapy.Spider):
     
