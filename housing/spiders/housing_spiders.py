@@ -272,8 +272,6 @@ class realtor_data(scrapy.Spider):
       pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
       
       columns = ["date_scraped", "url", "price", "address", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
-      [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
-      [status, price_sq_ft, on_realtor, tp, built, style, descr]
       
       output = [now, url, parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
@@ -282,12 +280,12 @@ class realtor_data(scrapy.Spider):
       df.loc[len(df)] = output
       
       if counter == 5:
-        df.to_csv(pd_file_name)
+        #df.to_csv(pd_file_name)
         counter = 1
       else:
         counter += 1
       
-    df.to_csv(pd_file_name)
+    #df.to_csv(pd_file_name)
     
 class zillow(scrapy.Spider):
     
