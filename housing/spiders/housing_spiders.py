@@ -203,7 +203,7 @@ class realtor_data(scrapy.Spider):
     print(url)
     print(response.xpath(price_xpath).extract())
     print(response.xpath(address_xpath).extract())
-    print(top_info_xpath(top_info_xpath).extract())
+    print(response.xpath(top_info_xpath).extract())
     print(response.xpath(bottom_info_xpath).extract())
     print(response.xpath(description_xpath).extract())
     
