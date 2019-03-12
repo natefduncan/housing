@@ -34,12 +34,12 @@ from pyvirtualdisplay import Display
 #from scrapy_splash import SplashRequest
     
 def parse_price(x): #For Realtor
-    return int(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", ""))
+    return int(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", ""))
     
 def parse_address(x): #For Realtor
     output = []
     for i in x:
-        j = i.replace(",", "").replace("\n", "").strip()
+        j = i.replace(",", "").replace("\n", "").replace("\u", "").strip()
         if j != "": 
             output.append(j)
     return output
@@ -59,21 +59,21 @@ def parse_top(x): #For Realtor
     
     for i in range(0, len(x)):
         temp = x[i]
-        temp = temp.replace("\n", "").replace(",", "").strip()
+        temp = temp.replace("\n", "").replace(",", "").replace("\u", "").strip()
         if temp == "beds":
-            beds = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            beds = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "full":
-            baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "baths":
-            baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "half baths":
-            half_baths = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            half_baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "sq ft":
-            sq_ft = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            sq_ft = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "sqft lot":
-            sqft_lot = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            sqft_lot = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "acres lot":
-            acres_lot = float(x[i-1].replace("\n", "").replace(",", "").strip())
+            acres_lot = float(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
     
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
@@ -94,21 +94,21 @@ def parse_bottom(x): #For Realtor
     
     for i in range(0, len(x)):
         temp = x[i]
-        temp = temp.replace("\n", "").replace(",", "").strip()
+        temp = temp.replace("\n", "").replace(",", "").replace("\u", "").strip()
         if temp == "Status":
-            status = x[i+2].replace("\n", "").replace(",", "").strip()
+            status = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Price/Sq Ft":
-            price_sq_ft = int(x[i+2].replace("\n", "").replace(",", "").replace("$","").strip())
+            price_sq_ft = int(x[i+2].replace("\n", "").replace(",", "").replace("$","").replace("\u", "").strip())
         elif temp == "On realtor.com":
-            on_realtor = x[i+3].replace("\n", "").replace(",", "").strip()
+            on_realtor = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Type":
-            tp = x[i+2].replace("\n", "").replace(",", "").strip()
+            tp = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Built":
-            built = int(x[i+2].replace("\n", "").replace(",", "").strip())
+            built = int(x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip())
         elif temp == "Style":
-            style = x[i+3].replace("\n", "").replace(",", "").strip()
+            style = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif len(x[i]) == mx:
-            descr = x[i].replace("\n", "").strip()
+            descr = x[i].replace("\n", "").replace("\u", "").strip()
     return [status, price_sq_ft, on_realtor, tp, built, style, descr]
 
 path = Path(os.path.dirname(os.path.abspath(__file__)))
