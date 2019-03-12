@@ -35,7 +35,7 @@ from pyvirtualdisplay import Display
     
 def parse_price(x): #For Realtor
     x  = "".join(x)
-    return int(get_ints(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", "")))
+    return int(get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", "")))
     
 def parse_address(x): #For Realtor
     output = []
