@@ -1,0 +1,134 @@
+[u'\n                      $1,100,000\n                    ']
+[u'\n                    ', u'5504 Emerson Ave,', u'\n                ', u'Dallas', u',\n                ', u'TX', u'\n                ', u'75209', u'\n              ']
+[u'\n      ', u'5', u'\n      beds\n    ', u'\n        ', u'\n          ', u'3', u' full,\n        ', u'\n        ', u'\n          ', u'1', u' half baths\n        ', u'\n      ', u'\n      ', u'4,342', u' sq ft\n    ', u'\n      ', u'9,670', u'\n       sqft lot\n    ']
+[u'\n    ', u'\n    ', u'\n      ', u'\n        ', u'\n          ', u'\n          ', u'Status', u'\n          ', u'\n            Active\n          ', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Price/Sq Ft', u'\n          ', u'$253', u'\n        ', u'\n        ', u'\n          ', u'\n          ', u'On realtor.com', u'\xae', u'\n          ', u'1 day', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Type', u'\n          ', u'Single Family Home', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Built', u'\n          ', u'1951', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Style', u'\n          ', u'\n            ', u'Traditional', u'\n          ', u'\n        ', u'\n\n      ', u'\n      ', u'\n        ', u'\n        ', u'\n      ', u'\n    ', u'\n  ', u'\n\n    \n\n  ', u'\n      ', u"Classic, sophisticated Greenway Crest home on corner lot. Hardwoods throughout, plantation shutters, fresh paint and pretty millwork. Kitchen has newly painted cabinets, white marble counters, stainless steel appliances. All baths are beautifully updated. Excellent floor plan with all bedrooms up and tons of storage throughout. Attached quarters offers 5th bed, full bath, kitchenette, living, dining and would make a perfect nursery, mother in law suite, nanny's quarters. While quarters is accessible from the main home, it has a private entry as well by utilizing one of three staircases. Large backyard with outdoor kitchen, good shade trees and tons of grass. Oversized 2 car garage has plenty of storage space.", u'\n      ', u'\n      ', u'Schools', u'\n      ', u'\n          ', u' Elementary School: Polk ', u'\n          ', u' High School: Jefferson ', u'\n          ', u' Middle School: Cary ', u'\n          ', u' School District: Dallas ISD ', u'\n      ', u'\n  ', u'\n\n    \n  ', u'\n']
+2019-03-11 20:03:30 [rotating_proxies.expire] DEBUG: Proxy <http://103.230.155.5:43322> is DEAD
+2019-03-11 20:03:30 [rotating_proxies.middlewares] DEBUG: Retrying <GET https://www.realtor.com/realestateandhomes-detail/4030-Cedarbrush-Dr_Dallas_TX_75229_M78190-85184> with another proxy (failed 1 times, max retries: 5)
+2019-03-11 20:03:30 [rotating_proxies.expire] DEBUG: Proxy <http://120.131.9.254:1080> is DEAD
+2019-03-11 20:03:30 [rotating_proxies.middlewares] DEBUG: Retrying <GET https://www.realtor.com/realestateandhomes-detail/4625-Vandervort-Dr_Dallas_TX_75216_M76740-38890> with another proxy (failed 1 times, max retries: 5)
+2019-03-11 20:03:30 [rotating_proxies.expire] DEBUG: Proxy <http://94.23.118.201:80> is GOOD
+2019-03-11 20:03:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.realtor.com/realestateandhomes-detail/4175-Midrose-Trl_Dallas_TX_75287_M81135-11442> (referer: None)
+2019-03-11 20:03:30 [rotating_proxies.expire] DEBUG: Proxy <http://103.254.185.219:30124> is GOOD
+2019-03-11 20:03:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.realtor.com/realestateandhomes-detail/2725-Hood-St-Apt-106_Dallas_TX_75219_M70847-73543> (referer: None)
+https://www.realtor.com/realestateandhomes-detail/5719-Lindell-Ave-B_Dallas_TX_75206_M72519-54276
+https://www.realtor.com/realestateandhomes-detail/1722-S-Beckley-Ave_Dallas_TX_75224_M73938-48589?ex=TX643051099
+2019-03-11 20:03:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url {"url": "https://www.realtor.com/realestateandhomes-detail/4175-Midrose-Trl_Dallas_TX_75287_M81135-11442"}
+2019-03-11 20:03:30 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:03:51 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "POST /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url HTTP/1.1" 200 13
+2019-03-11 20:03:51 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2019-03-11 20:03:51 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/element {"using": "xpath", "value": "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"}
+2019-03-11 20:03:51 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:03:52 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "POST /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/element HTTP/1.1" 200 88
+2019-03-11 20:03:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2019-03-11 20:03:52 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/source {}
+2019-03-11 20:03:52 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:03:53 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "GET /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/source HTTP/1.1" 200 481946
+2019-03-11 20:03:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+https://www.realtor.com/realestateandhomes-detail/4175-Midrose-Trl_Dallas_TX_75287_M81135-11442
+[u'\n                      $339,900\n                    ']
+[u'\n                    ', u'4175 Midrose Trl,', u'\n                ', u'Dallas', u',\n                ', u'TX', u'\n                ', u'75287', u'\n              ']
+[u'\n      ', u'3', u'\n      beds\n    ', u'\n        ', u'\n          ', u'2', u' full,\n        ', u'\n        ', u'\n          ', u'1', u' half baths\n        ', u'\n      ', u'\n      ', u'2,131', u' sq ft\n    ', u'\n      ', u'3,920', u'\n       sqft lot\n    ']
+[u'\n    ', u'\n    ', u'\n      ', u'\n        ', u'\n          ', u'\n          ', u'Status', u'\n          ', u'\n            Active\n          ', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Price/Sq Ft', u'\n          ', u'$160', u'\n        ', u'\n        ', u'\n          ', u'\n          ', u'On realtor.com', u'\xae', u'\n          ', u'22 hours', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Type', u'\n          ', u'Single Family Home', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Built', u'\n          ', u'1995', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Style', u'\n          ', u'\n            ', u'Traditional', u'\n          ', u'\n        ', u'\n\n      ', u'\n      ', u'\n        ', u'\n        ', u'\n      ', u'\n    ', u'\n  ', u'\n\n    \n\n  ', u'\n      ', u'Awesome location close to everything, well cared for and maintained garden home is less than a mile from Dallas Toll way and Bush Toll way and is Plano ISD. 2017 new roof, downstairs AC, Exterior & Interior paint, tile in both baths and upstairs AC replace in 2015. This home is very neutral so you can make it your own, high ceilings, island kitchen and white cabinets, gas stove, beautiful large windows making this home light and bright. Downstairs features 2 living areas & 2 dining areas & a half bath. Upstairs 3 bed 2 baths and a loft office space. New Orleans style courtyard with deck to enjoy your morning coffee or a cool evening. You need to see this one.', u'\n      ', u'\n      ', u'Schools', u'\n      ', u'\n          ', u' Elementary School: Mitchell ', u'\n          ', u' High School: Shepton ', u'\n          ', u' Middle School: Frankford ', u'\n          ', u' School District: Plano ISD ', u'\n      ', u'\n  ', u'\n\n    \n  ', u'\n']
+2019-03-11 20:03:53 [rotating_proxies.expire] DEBUG: Proxy <http://134.119.214.204:1080> is DEAD
+2019-03-11 20:03:53 [rotating_proxies.middlewares] DEBUG: Retrying <GET https://www.realtor.com/realestateandhomes-detail/10871-Yorkspring-Dr_Dallas_TX_75218_M74107-19911> with another proxy (failed 1 times, max retries: 5)
+2019-03-11 20:03:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url {"url": "https://www.realtor.com/realestateandhomes-detail/2725-Hood-St-Apt-106_Dallas_TX_75219_M70847-73543"}
+2019-03-11 20:03:53 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:04:12 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "POST /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url HTTP/1.1" 200 13
+2019-03-11 20:04:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2019-03-11 20:04:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/element {"using": "xpath", "value": "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"}
+2019-03-11 20:04:12 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:04:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "POST /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/element HTTP/1.1" 200 88
+2019-03-11 20:04:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2019-03-11 20:04:13 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/source {}
+2019-03-11 20:04:13 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+2019-03-11 20:04:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43567 "GET /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/source HTTP/1.1" 200 465243
+2019-03-11 20:04:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+https://www.realtor.com/realestateandhomes-detail/2725-Hood-St-Apt-106_Dallas_TX_75219_M70847-73543
+[u'\n                      $218,000\n                    ']
+[u'\n                    ', u'2725 Hood St Apt 106,', u'\n                ', u'Dallas', u',\n                ', u'TX', u'\n                ', u'75219', u'\n              ']
+[u'\n      ', u'1', u'\n      bed\n    ', u'\n        ', u'1', u'\n        bath\n      ', u'\n      ', u'791', u' sq ft\n    ', u'\n      ', u'0.73', u'\n       acres lot\n    ']
+[u'\n    ', u'\n    ', u'\n      ', u'\n        ', u'\n          ', u'\n          ', u'Status', u'\n          ', u'\n            Active\n          ', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Price/Sq Ft', u'\n          ', u'$276', u'\n        ', u'\n        ', u'\n          ', u'\n          ', u'On realtor.com', u'\xae', u'\n          ', u'1 day', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Type', u'\n          ', u'Condo/Townhome/Row Home/Co-Op', u'\n        ', u'\n\n        ', u'\n          ', u'\n          ', u'Built', u'\n          ', u'1969', u'\n        ', u'\n\n\n      ', u'\n      ', u'\n        ', u'\n        ', u'\n      ', u'\n    ', u'\n  ', u'\n\n    \n\n  ', u'\n      ', u"Very Private, Renovated Condo In Mansion Park. Has An Interesting Natural Wood Wall For Accent, Brick Wood Burning Fireplace, Cozy Private Patio and A Great Community Pool With A Patio Area. All Appliances Stay Including The Combo Washer & Dryer, This Special Find Won't Last Long. Owner is a Real Estate Agent.", u'\n      ', u'\n      ', u'Schools', u'\n      ', u'\n          ', u' Elementary School: Houston ', u'\n          ', u' High School: North Dallas ', u'\n          ', u' Middle School: Rusk ', u'\n          ', u' School District: Dallas ISD ', u'\n      ', u'\n  ', u'\n\n    \n  ', u'\n']
+2019-03-11 20:04:13 [rotating_proxies.middlewares] INFO: Proxies(good: 3, dead: 3, unchecked: 14, reanimated: 0, mean backoff time: 226s)
+2019-03-11 20:04:13 [rotating_proxies.expire] DEBUG: Proxy <http://185.80.128.98:8081> is DEAD
+2019-03-11 20:04:13 [rotating_proxies.middlewares] DEBUG: Retrying <GET https://www.realtor.com/realestateandhomes-detail/8246-Rayville-Dr_Dallas_TX_75217_M77194-82063> with another proxy (failed 1 times, max retries: 5)
+2019-03-11 20:04:13 [scrapy.extensions.logstats] INFO: Crawled 3 pages (at 3 pages/min), scraped 0 items (at 0 items/min)
+2019-03-11 20:04:15 [rotating_proxies.expire] DEBUG: Proxy <http://185.80.128.98:8081> is GOOD
+2019-03-11 20:04:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.realtor.com/realestateandhomes-detail/3241-Whispering-Oak_Farmers-Branch_TX_75234_M88555-90937> (referer: None)
+https://www.realtor.com/realestateandhomes-detail/3216-Casino-Dr_Dallas_TX_75224_M82843-99115
+2019-03-11 20:04:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.realtor.com/realestateandhomes-detail/10871-Yorkspring-Dr_Dallas_TX_75218_M74107-19911> (referer: None)
+https://www.realtor.com/realestateandhomes-detail/10631-Wessex-Dr_Dallas_TX_75217_M81177-95681
+2019-03-11 20:04:16 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url {"url": "https://www.realtor.com/realestateandhomes-detail/3241-Whispering-Oak_Farmers-Branch_TX_75234_M88555-90937"}
+2019-03-11 20:04:16 [urllib3.connectionpool] DEBUG: Resetting dropped connection: 127.0.0.1
+^C2019-03-11 20:04:19 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-03-11 20:04:19 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.realtor.com/realestateandhomes-detail/3241-Whispering-Oak_Farmers-Branch_TX_75234_M88555-90937> (referer: None)
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/pi/Desktop/housing/housing/spiders/housing_spiders.py", line 184, in parse
+    self.driver.get(response.url)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/request.py", line 72, in request
+    **urlopen_kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/request.py", line 150, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/poolmanager.py", line 323, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/connectionpool.py", line 377, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+  File "/usr/lib/python2.7/httplib.py", line 1121, in getresponse
+    response.begin()
+  File "/usr/lib/python2.7/httplib.py", line 438, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python2.7/httplib.py", line 402, in _read_status
+    raise BadStatusLine(line)
+ProtocolError: ('Connection aborted.', BadStatusLine("''",))
+2019-03-11 20:04:19 [rotating_proxies.expire] DEBUG: Proxy <http://62.210.149.33:30221> is GOOD
+2019-03-11 20:04:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.realtor.com/realestateandhomes-detail/3101-Amherst-Ave_Dallas_TX_75225_M88277-74341> (referer: None)
+2019-03-11 20:04:19 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-03-11 20:04:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43567/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url {"url": "https://www.realtor.com/realestateandhomes-detail/10871-Yorkspring-Dr_Dallas_TX_75218_M74107-19911"}
+2019-03-11 20:04:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (2): 127.0.0.1:43567
+2019-03-11 20:04:19 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2019-03-11 20:04:19 [urllib3.connectionpool] WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71e5a2f0>: Failed to establish a new connection: [Errno 111] Connection refused',)': /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url
+2019-03-11 20:04:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (3): 127.0.0.1:43567
+2019-03-11 20:04:19 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2019-03-11 20:04:19 [urllib3.connectionpool] WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x724c1150>: Failed to establish a new connection: [Errno 111] Connection refused',)': /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url
+2019-03-11 20:04:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (4): 127.0.0.1:43567
+2019-03-11 20:04:19 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2019-03-11 20:04:19 [urllib3.connectionpool] WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x724c1050>: Failed to establish a new connection: [Errno 111] Connection refused',)': /session/ebf8e773-f699-4e53-b21f-809a0d6a85b3/url
+2019-03-11 20:04:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (5): 127.0.0.1:43567
+2019-03-11 20:04:19 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.realtor.com/realestateandhomes-detail/10871-Yorkspring-Dr_Dallas_TX_75218_M74107-19911> (referer: None)
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/pi/Desktop/housing/housing/spiders/housing_spiders.py", line 184, in parse
+    self.driver.get(response.url)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/pi/.local/lib/python2.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/request.py", line 72, in request
+    **urlopen_kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/request.py", line 150, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/poolmanager.py", line 323, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/pi/.local/lib/python2.7/site-packages/urllib3/connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "/home/pi/.local/lib/python2.7/sit
