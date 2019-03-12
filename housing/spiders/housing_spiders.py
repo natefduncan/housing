@@ -35,7 +35,7 @@ from pyvirtualdisplay import Display
     
 def parse_price(x): #For Realtor
     x  = "".join(x)
-    return int(get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", "")))
+    return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", ""))
     
 def parse_address(x): #For Realtor
     output = []
@@ -65,19 +65,19 @@ def parse_top(x): #For Realtor
         temp = x[i]
         temp = temp.replace("\n", "").replace(",", "").replace("\u", "").strip()
         if temp == "beds":
-            beds = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            beds = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "full":
-            baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "baths":
-            baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "half baths":
-            half_baths = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            half_baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "sq ft":
-            sq_ft = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            sq_ft = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "sqft lot":
-            sqft_lot = int(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            sqft_lot = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "acres lot":
-            acres_lot = float(x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            acres_lot = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
     
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
@@ -102,13 +102,13 @@ def parse_bottom(x): #For Realtor
         if temp == "Status":
             status = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Price/Sq Ft":
-            price_sq_ft = int(x[i+2].replace("\n", "").replace(",", "").replace("$","").replace("\u", "").strip())
+            price_sq_ft = x[i+2].replace("\n", "").replace(",", "").replace("$","").replace("\u", "").strip()
         elif temp == "On realtor.com":
             on_realtor = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Type":
             tp = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Built":
-            built = int(x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip())
+            built = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif temp == "Style":
             style = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
         elif len(x[i]) == mx:
