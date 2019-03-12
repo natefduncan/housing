@@ -242,14 +242,14 @@ class realtor_data(scrapy.Spider):
   def parse(self, response):
     
     now = dt.datetime.now()
-    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
-    
+    #file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+    file_name = "realtor_urls_2019.3.11.txt"
     with open(file_name) as f:
       urls = f.readlines()
       # you may also want to remove whitespace characters like `\n` at the end of each line
       urls = [x.strip().replace("\n", "") for x in urls]
     
-    columns = ["date_scraped", "url", "price", "address", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
+    columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
       
     counter = 1
@@ -270,9 +270,9 @@ class realtor_data(scrapy.Spider):
       top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
       description_xpath = "//*[@id='ldp-detail-overview']//text()"
   
-      pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
-      
-      output = [now, url, parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
+      #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
+      pd_file_name = "realtor_data_2019.3.11.csv"
+      output = [now, url, parse_address(response.xpath(addres_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
       print(output)
       
