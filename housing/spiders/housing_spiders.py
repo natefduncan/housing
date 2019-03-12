@@ -73,7 +73,7 @@ def parse_top(x): #For Realtor
         elif temp == "sqft lot":
             sqft_lot = int(x[i-1].replace("\n", "").replace(",", "").strip())
         elif temp == "acres lot":
-            acres_lot = int(x[i-1].replace("\n", "").replace(",", "").strip())
+            acres_lot = float(x[i-1].replace("\n", "").replace(",", "").strip())
     
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
@@ -95,7 +95,6 @@ def parse_bottom(x): #For Realtor
     for i in range(0, len(x)):
         temp = x[i]
         temp = temp.replace("\n", "").replace(",", "").strip()
-        print(temp)
         if temp == "Status":
             status = x[i+2].replace("\n", "").replace(",", "").strip()
         elif temp == "Price/Sq Ft":
@@ -233,45 +232,69 @@ class realtor(scrapy.Spider):
 
 class realtor_data(scrapy.Spider):
   name = "realtor_data"
-  
+  start_urls = [
+        'https://www.realtor.com'
+    ]
+    
   def __init__(self):
     self.driver = webdriver.Firefox()
   
   def start_requests(self):
-    now = dt.datetime.now()
-    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
-    with open(file_name) as f:
-      urls = f.readlines()
-      # you may also want to remove whitespace characters like `\n` at the end of each line
-      urls = [x.strip().replace("\n", "") for x in urls]
+  
     for url in urls:
       print(url)
       yield scrapy.Request(url=url, callback=self.parse)
     
   def parse(self, response):
-    self.driver.get(response.url)
-    url = response.url
-    price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"
-
-    try:
-        element = WebDriverWait(self.driver, 120).until(
-            EC.presence_of_element_located((By.XPATH, price_xpath))
-        )
-    except:
-        self.driver.close()
     
-    response = scrapy.Selector(text=self.driver.page_source)
-    address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
-    top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
-    description_xpath = "//*[@id='ldp-detail-overview']//text()"
-
-    columns = ["url", "price", "address", "bed", "bath", "sq_ft", "acres", "status", "price_per_sq_ft", "days_on_realtor", "type", "built", "description"]
+    now = dt.datetime.now()
+    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
     
-    print(url)
-    print(parse_price(response.xpath(price_xpath).extract()))
-    print(parse_address(response.xpath(address_xpath).extract()))
-    print(parse_top(response.xpath(top_info_xpath).extract()))
-    print(parse_bottom(response.xpath(description_xpath).extract()))
+    with open(file_name) as f:
+      urls = f.readlines()
+      # you may also want to remove whitespace characters like `\n` at the end of each line
+      urls = [x.strip().replace("\n", "") for x in urls]
+    
+    df = pd.DataFrame(columns=columns)
+      
+    counter = 1
+    
+    for url in urls:
+      self.driver.get(url)
+      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"
+      
+      try:
+          element = WebDriverWait(self.driver, 120).until(
+              EC.presence_of_element_located((By.XPATH, price_xpath))
+          )
+      except:
+          self.driver.close()
+      
+      response = scrapy.Selector(text=self.driver.page_source)
+      address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
+      top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
+      description_xpath = "//*[@id='ldp-detail-overview']//text()"
+  
+  
+      pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
+      
+      columns = ["date_scraped", "url", "price", "address", "beds", "baths", "half_baths" "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
+      [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
+      [status, price_sq_ft, on_realtor, tp, built, style, descr]
+      
+      output = [now, url, parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
+      output = flatten(output)
+      print(output)
+      
+      df.loc[len(df)] = output
+      
+      if counter == 5:
+        df.to_csv(pd_file_name)
+        counter = 1
+      else:
+        counter += 1
+      
+    df.to_csv(pd_file_name)
     
 class zillow(scrapy.Spider):
     
