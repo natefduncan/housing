@@ -44,7 +44,7 @@ def parse_address(x): #For Realtor
         if j != "": 
             output.append(j)
     if len(output) > 4:
-      output[0] = output.join([output[0], " ", output[1]])
+      output[0] = "".join([output[0], " ", output[1]])
       del output[1]
     return output
 
