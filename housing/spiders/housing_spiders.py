@@ -34,7 +34,7 @@ from pyvirtualdisplay import Display
 #from scrapy_splash import SplashRequest
     
 def parse_price(x): #For Realtor
-    return int(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", ""))
+    return int(get_ints(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", "")))
     
 def parse_address(x): #For Realtor
     output = []
