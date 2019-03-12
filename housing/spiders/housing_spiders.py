@@ -34,6 +34,7 @@ from pyvirtualdisplay import Display
 #from scrapy_splash import SplashRequest
     
 def parse_price(x): #For Realtor
+    x  = "".join(x)
     return int(get_ints(x[0].replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", "")))
     
 def parse_address(x): #For Realtor
@@ -264,7 +265,7 @@ class realtor_data(scrapy.Spider):
     
     for url in urls:
       self.driver.get(url)
-      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div/span/text()"
+      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div//text()"
       
       try:
           element = WebDriverWait(self.driver, 120).until(
