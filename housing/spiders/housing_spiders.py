@@ -16,7 +16,7 @@ import numpy as np #For working with arrays
 from pathlib import Path #For working with system independent paths
 import datetime as dt #For working with and converting times
 import math #For some math functions
-#import pandas as pd #For working with dataframes
+import pandas as pd #For working with dataframes
 
 #FOR SELENIUM
 
@@ -280,12 +280,12 @@ class realtor_data(scrapy.Spider):
       df.loc[len(df)] = output
       
       if counter == 5:
-        #df.to_csv(pd_file_name)
+        df.to_csv(pd_file_name)
         counter = 1
       else:
         counter += 1
       
-    #df.to_csv(pd_file_name)
+    df.to_csv(pd_file_name)
     
 class zillow(scrapy.Spider):
     
