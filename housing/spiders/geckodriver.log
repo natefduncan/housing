@@ -5816,3 +5816,13 @@ A coding exception was thrown and uncaught in a Task.
 Full message: TypeError: NetworkError when attempting to fetch resource.
 Full stack: 
 *************************
+1552411855090	geckodriver	INFO	Listening on 127.0.0.1:39483
+1552411857765	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552411865090	Marionette	INFO	Listening on port 39615
+1552411865758	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
