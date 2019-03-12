@@ -5803,3 +5803,16 @@ JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/cont
 [Child 4292] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
 [Child 4292] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 4292] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1552399220914	geckodriver	INFO	Listening on 127.0.0.1:42879
+1552399223113	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+Error: GDK_BACKEND does not match available displays
+1552399253749	geckodriver	INFO	Listening on 127.0.0.1:47113
+1552399255382	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1552399262030	Marionette	INFO	Listening on port 34379
+1552399262636	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
