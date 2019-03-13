@@ -276,7 +276,7 @@ class realtor_data(scrapy.Spider):
 
       try:
           element = WebDriverWait(self.driver, 120).until(
-              EC.presence_of_element_located((By.XPATH, description_wait))
+              EC.presence_of_element_located((By.XPATH, description_wait_xpath))
           )
       except:
           self.driver.close()
