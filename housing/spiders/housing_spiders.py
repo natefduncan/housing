@@ -271,19 +271,20 @@ class realtor_data(scrapy.Spider):
     
     for url in urls:
       self.driver.get(url)
-      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div//text()"
-      
+      description_wait_xpath = "//*[@id='ldp-detail-overview']//text()"
+      description_xpath = "//*[@id='ldp-detail-overview']//text()"
+
       try:
           element = WebDriverWait(self.driver, 120).until(
-              EC.presence_of_element_located((By.XPATH, price_xpath))
+              EC.presence_of_element_located((By.XPATH, description_wait))
           )
       except:
           self.driver.close()
-      
+          
       response = scrapy.Selector(text=self.driver.page_source)
+      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div//text()"
       address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
       top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
-      description_xpath = "//*[@id='ldp-detail-overview']//text()"
  
       output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
       output = flatten(output)
