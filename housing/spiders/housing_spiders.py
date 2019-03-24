@@ -338,7 +338,7 @@ class homefinder(scrapy.Spider):
             
     def parse(self, response):
         areas = ["TX/Dallas"]
-        base = "https://homefinder.com/for-sale/ho"
+        base = "https://homefinder.com/for-sale/"
         for j in areas:
           page_counter = 1
           pages = 100
@@ -383,10 +383,10 @@ class homefinder(scrapy.Spider):
                 file.write(link)
                 file.write("\n")
                 print("Added: " + link)
+              '''
               counter += 1
             page_counter += 1
             print("finished")
-            '''
 
 class realtor_data(scrapy.Spider):
   name = "realtor_data"
