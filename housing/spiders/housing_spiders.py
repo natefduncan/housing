@@ -401,7 +401,7 @@ class homefinder(scrapy.Spider):
           print("finished")
 
 class homefinder_data(scrapy.Spider):
-  name = "realtor_data"
+  name = "homefinder_data"
   start_urls = [
         'https://www.realtor.com'
     ]
