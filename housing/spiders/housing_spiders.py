@@ -327,6 +327,7 @@ class homefinder(scrapy.Spider):
         
         #self.driver.set_window_size(1920, 1080)
         '''
+        perhaps try chrome
         #start Chrome
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
