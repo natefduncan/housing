@@ -338,7 +338,7 @@ class homefinder(scrapy.Spider):
             
     def parse(self, response):
         areas = ["TX/Dallas"]
-        base = "https://homefinder.com/for-sale/"
+        base = "https://homefinder.com/for-sale/ho"
         for j in areas:
           page_counter = 1
           pages = 100
@@ -352,9 +352,7 @@ class homefinder(scrapy.Spider):
             time.sleep(5)
         
             pages_path = "/html/body/div[1]/div[2]/div/section/div[2]/div[4]/div/div[1]/div/div[40]/nav/ul/li[6]/a/text()"
-            cards_path = ("/html/body/div[@id='__nuxt']/div[@id='__layout']/div[@class='app-main']/section[@class='search-page']"
-            "/div[@class='listings-wrapper']/div[contains(@class, 'listings-container container')]/div[@class='row']/div[@class='col']"
-            "/div[contain(@class, 'row no-gutters')]/div[contains(@class, 'py-2 p-md-2 col-md-6')]/a")
+            cards_path = ("/html/body/div[1]/div[2]/div/section/div[2]/div[4]/div/div[1]/div/div")
             
             try:
                 element = WebDriverWait(self.driver, 120).until(
@@ -372,7 +370,7 @@ class homefinder(scrapy.Spider):
             
             counter = 1 
             for i in rows:
-              print i.xpath("text()").extract()[0]
+              print(i.xpath("a/href()").extract()[0])
               '''
               link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
               link = response.xpath(link_path).extract()[0]
