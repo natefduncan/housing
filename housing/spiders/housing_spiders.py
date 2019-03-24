@@ -307,6 +307,159 @@ class realtor_data(scrapy.Spider):
       
     df.to_csv(pd_file_name, index = False)
     
+
+class homefinder(scrapy.Spider):
+    
+    name = "homefinder"
+    start_urls = [
+        'https://www.homefinder.com'
+    ]
+    
+    def __init__(self):
+        
+        #FOR SPLASH
+        
+        #client = docker.from_env()
+        #client.containers.run("scrapinghub/splash", detach = True)
+        
+        #FOR SELENIUM
+        self.driver = webdriver.Firefox()
+        
+        #self.driver.set_window_size(1920, 1080)
+        '''
+        #start Chrome
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        try:
+            self.driver = webdriver.Chrome(chrome_options=options)
+        except:
+            pass
+        '''
+            
+    def parse(self, response):
+        areas = ["TX/Dallas"]
+        base = "https://www.realtor.com/realestateandhomes-search/"
+        for j in areas:
+          page_counter = 1
+          pages = 100
+          while page_counter <= pages:
+            print("-" * 30)
+            print(page_counter)
+            print(pages)
+            print("-" * 30)
+            url = (base+j+("?pg=%s") % str(page_counter))
+            self.driver.get(url)
+            time.sleep(5)
+        
+            pages_path = "/html/body/div[1]/div[2]/div/section/div[2]/div[4]/div/div[1]/div/div[40]/nav/ul/li[6]/a/text()"
+            cards_path = ("/html/body/div[@id='__nuxt']/div[@id='__layout']/div[@class='app-main']/section[@class='search-page']"
+            "/div[@class='listings-wrapper']/div[contains(@class, 'listings-container container')]/div[@class='row']/div[@class='col']"
+            "/div[contain(@class, 'row no-gutters')]/div[contains(@class, 'py-2 p-md-2 col-md-6')]/a")
+            
+            try:
+                element = WebDriverWait(self.driver, 120).until(
+                    EC.presence_of_element_located((By.XPATH, cards_path))
+                )
+            except:
+                self.driver.close()
+            
+            response = scrapy.Selector(text=self.driver.page_source)
+            
+            #Get the actual number of pages. 
+            pages = get_ints(response.xpath(pages_path).extract()[0])
+
+            rows = response.xpath(cards_path)
+            
+            counter = 1 
+            for i in rows:
+              print i.xpath("text()").extract()[0]
+              '''
+              link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
+              link = response.xpath(link_path).extract()[0]
+              link = link.encode('utf-8').strip()
+              base_url = "https://www.realtor.com"
+              link = base_url + link
+              now = dt.datetime.now()
+              file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+              with open(file_name, "a+") as file:
+                file.write(link)
+                file.write("\n")
+                print("Added: " + link)
+              counter += 1
+            page_counter += 1
+            print("finished")
+            '''
+
+class realtor_data(scrapy.Spider):
+  name = "realtor_data"
+  start_urls = [
+        'https://www.realtor.com'
+    ]
+    
+  def __init__(self):
+    self.driver = webdriver.Firefox()
+    
+  def parse(self, response):
+    
+    now = dt.datetime.now()
+    #file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+    file_name = "realtor_urls_2019.3.11.txt"
+    with open(file_name) as f:
+      urls = f.readlines()
+      # you may also want to remove whitespace characters like `\n` at the end of each line
+      urls = [x.strip().replace("\n", "") for x in urls]
+    
+    #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
+    pd_file_name = "realtor_data_2019.3.11.csv"
+    
+    columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
+    df = pd.DataFrame(columns=columns)
+    try:
+      df = pd.read_csv(pd_file_name)
+      urls = [i for i in urls if i not in df.url.tolist()]
+    except:
+      pass
+      
+    counter = 1
+    
+    for url in urls:
+      self.driver.get(url)
+      description_wait_xpath = "//*[@id='ldp-detail-overview']//text()"
+      description_xpath = "//*[@id='ldp-detail-overview']//text()"
+
+      try:
+          element = WebDriverWait(self.driver, 120).until(
+              EC.presence_of_element_located((By.XPATH, description_wait_xpath))
+          )
+      except:
+          self.driver.close()
+          
+      response = scrapy.Selector(text=self.driver.page_source)
+      price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div//text()"
+      address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
+      top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
+ 
+      output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
+      output = flatten(output)
+      for i in range(0, len(output)):
+        try:
+          output[i] = output[i].encode('utf-8').strip()
+        except:
+          pass
+          
+      print(output)
+      print(len(output))
+      print(len(columns))
+      df.loc[len(df)] = output
+      
+      if counter == 5:
+        df.to_csv(pd_file_name, index = False)
+        counter = 1
+      else:
+        counter += 1
+      
+    df.to_csv(pd_file_name, index = False)    
+    
 class zillow(scrapy.Spider):
     
     name = "zillow"
