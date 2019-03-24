@@ -35,12 +35,12 @@ from pyvirtualdisplay import Display
     
 def parse_price(x): #For Realtor
     x  = "".join(x)
-    return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace("\u", ""))
+    return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace(r"\u", ""))
     
 def parse_address(x): #For Realtor
     output = []
     for i in x:
-        j = i.replace(",", "").replace("\n", "").replace("\u", "").strip()
+        j = i.replace(",", "").replace("\n", "").replace(r"\u", "").strip()
         if j != "": 
             output.append(j)
     if len(output) > 4:
@@ -66,21 +66,21 @@ def parse_top(x): #For Realtor
     
     for i in range(0, len(x)):
         temp = x[i]
-        temp = temp.replace("\n", "").replace(",", "").replace("\u", "").strip()
+        temp = temp.replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         if temp == "beds":
-            beds = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            beds = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "full":
-            baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            baths = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "baths":
-            baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            baths = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "half baths":
-            half_baths = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            half_baths = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "sq ft":
-            sq_ft = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            sq_ft = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "sqft lot":
-            sqft_lot = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            sqft_lot = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "acres lot":
-            acres_lot = x[i-1].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            acres_lot = x[i-1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
     
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
@@ -101,21 +101,21 @@ def parse_bottom(x): #For Realtor
     
     for i in range(0, len(x)):
         temp = x[i]
-        temp = temp.replace("\n", "").replace(",", "").replace("\u", "").strip()
+        temp = temp.replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         if temp == "Status":
-            status = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            status = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Price/Sq Ft":
-            price_sq_ft = x[i+2].replace("\n", "").replace(",", "").replace("$","").replace("\u", "").strip()
+            price_sq_ft = x[i+2].replace("\n", "").replace(",", "").replace("$","").replace(r"\u", "").strip()
         elif temp == "On realtor.com":
-            on_realtor = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            on_realtor = x[i+3].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Type":
-            tp = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            tp = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Built":
-            built = x[i+2].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            built = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Style":
-            style = x[i+3].replace("\n", "").replace(",", "").replace("\u", "").strip()
+            style = x[i+3].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif len(x[i]) == mx:
-            descr = x[i].replace("\n", "").replace("\u", "").strip()
+            descr = x[i].replace("\n", "").replace(r"\u", "").strip()
     return [status, price_sq_ft, on_realtor, tp, built, style, descr]
 
 path = Path(os.path.dirname(os.path.abspath(__file__)))
@@ -364,7 +364,7 @@ class homefinder(scrapy.Spider):
             response = scrapy.Selector(text=self.driver.page_source)
             
             #Get the actual number of pages. 
-            pages = get_ints(response.xpath(pages_path).extract()[0])
+            pages = get_ints(response.xpath(pages_path).extract())
 
             rows = response.xpath(cards_path)
             
