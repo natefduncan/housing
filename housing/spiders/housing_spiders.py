@@ -370,7 +370,7 @@ class homefinder(scrapy.Spider):
             
             counter = 1 
             for i in rows:
-              print(i.xpath("a/href()").extract()[0])
+              print(i.xpath("a/@href").extract()[0])
               '''
               link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
               link = response.xpath(link_path).extract()[0]
