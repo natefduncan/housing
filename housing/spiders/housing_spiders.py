@@ -33,6 +33,9 @@ from pyvirtualdisplay import Display
 #import docker
 #from scrapy_splash import SplashRequest
     
+path = Path(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(str(path))
+
 def parse_price(x): #For Realtor
     x  = "".join(x)
     return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace(r"\u", ""))
@@ -118,9 +121,6 @@ def parse_bottom(x): #For Realtor
             descr = x[i].replace("\n", "").replace(r"\u", "").strip()
     return [status, price_sq_ft, on_realtor, tp, built, style, descr]
 
-path = Path(os.path.dirname(os.path.abspath(__file__)))
-os.chdir(str(path))
-
 def flatten(x): #List of lists to list. 
     temp = []
     for i in x:
@@ -158,7 +158,6 @@ def remove_comma(x):
         if i != ",":
             output.append(i)
     return "".join(output)
-
 
 class realtor(scrapy.Spider):
     
@@ -307,7 +306,6 @@ class realtor_data(scrapy.Spider):
       
     df.to_csv(pd_file_name, index = False)
     
-
 class homefinder(scrapy.Spider):
     
     name = "homefinder"
@@ -371,25 +369,22 @@ class homefinder(scrapy.Spider):
             
             counter = 1 
             for i in rows:
-              print(i.xpath("a/@href").extract())
-              '''
-              link_path = cards_path + ("[%s]/div[3]/div[1]/a/@href" % str(counter))
-              link = response.xpath(link_path).extract()[0]
+              link = i.xpath("a/@href").extract()
+              link.enc
               link = link.encode('utf-8').strip()
-              base_url = "https://www.realtor.com"
-              link = base_url + link
-              now = dt.datetime.now()
-              file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
-              with open(file_name, "a+") as file:
-                file.write(link)
-                file.write("\n")
-                print("Added: " + link)
-              '''
-              counter += 1
-            page_counter += 1
-            print("finished")
+              if link[0] == "/":
+                base_url = "https://www.realtor.com"
+                link = base_url + link
+                now = dt.datetime.now()
+                file_name = "homefinder_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+                with open(file_name, "a+") as file:
+                  file.write(link)
+                  file.write("\n")
+                  print("Added: " + link)
+          page_counter += 1
+          print("finished")
 
-class realtor_data(scrapy.Spider):
+class homefinder_data(scrapy.Spider):
   name = "realtor_data"
   start_urls = [
         'https://www.realtor.com'
@@ -595,20 +590,7 @@ class trulia(scrapy.Spider):
         
         self.driver.get(response.url)
         
-        areas = ["SLC, UT", "Logan, UTAH", 'St. George, UT', 'Cedar City, UT', 'West Jordan, UT']
-        
-        try:
-            element = WebDriverWait(self.driver, 60).until(
-                EC.presence_of_element_located((By.ID, 'searchBox'))
-            )
-        except:
-            self.driver.close()
-        
-        search = self.driver.find_element_by_id('searchBox')
-        search.clear()
-        search.send_keys("Utah")
-        button = self.driver.find_element_by_xpath('//body/div[2]/div/div[1]/div/div/div[2]/button')
-        button.click()
+        areas = ["/TX/Dallas"]
         
         for i in areas: 
             
@@ -626,39 +608,23 @@ class trulia(scrapy.Spider):
             button = self.driver.find_element_by_id("dropdownBtn")
             button.click()
             
+            cards_path = '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
+            
             try:
-                element = WebDriverWait(self.driver, 20).until(
-                    EC.presence_of_element_located((By.XPATH, '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'))
+                element = WebDriverWait(self.driver, 120).until(
+                    EC.presence_of_element_located((By.XPATH, cards_path))
                 )
             except:
                 self.driver.close()
             
             response = scrapy.Selector(text=self.driver.page_source)
             
-            x = response.xpath('/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li')
+            links_xpath = "//body//a[@class='tileLink']/@href"
             
-            values = []
+            links = response.xpath(links_xpath)
             
-            for i in x:
-                price = i.xpath('div/div/div[2]/a[1]/div[2]/div/div[1]/span/text()').extract()
-                address1 = i.xpath('div/div/div[2]/a[2]/div/div[1]/text()').extract()
-                address2 = i.xpath('div/div/div[2]/a[2]/div/div[2]/div/text()').extract()
-                bed = i.xpath('div/div/div[2]/a[1]/div[2]/div/div[2]/ul/li[1]/text()').extract()
-                bath = i.xpath('div/div/div[2]/a[1]/div[2]/div/div[2]/ul/li[2]/text()').extract()
-                sq_ft = i.xpath('div/div/div[2]/a[1]/div[2]/div/div[2]/ul/li[3]/text()').extract()
-                
-                values.append([price, address1, address2, bed, bath, sq_ft])
-            
-            values = [flatten(n) for n in values]
-            
-            #Write the values to txt file. 
-            
-            filename = "trulia_data.txt"
-            f = open(filename, 'a+')
-    
-            for m in values:
-                f.write("%s\n" % m)
-            f.close()
+            for i in links:
+              print(i)
         
 
         
