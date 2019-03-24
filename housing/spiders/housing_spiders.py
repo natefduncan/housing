@@ -261,6 +261,8 @@ class realtor_data(scrapy.Spider):
     except:
       pass
     
+    print("REMAINING: " + str(len(urls)) + str(len(df)) + ("-" * 30))
+    
     for url in urls:
         yield scrapy.Request(url=url, callback=self.parse)
             
@@ -279,7 +281,6 @@ class realtor_data(scrapy.Spider):
       df = pd.read_csv(pd_file_name)
     except:
       pass
-    
     url = response.request.url
     self.driver.get(url)
     
