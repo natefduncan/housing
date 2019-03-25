@@ -599,30 +599,15 @@ class trulia(scrapy.Spider):
     def start_requests(self):
     
         base = "https://www.trulia.com"
-         
-        yield scrapy.Request(url=base, callback = self.parse)
+        areas = ["/TX/Dallas"]
+        for i in areas:
+          yield scrapy.Request(url=base+i, callback = self.parse)
             
     def parse(self, response):
         
-        self.driver.get(response.url)
-        
-        areas = ["/TX/Dallas"]
+        url = self.driver.get(response.url)
         
         for i in areas: 
-            
-            try:
-                element = WebDriverWait(self.driver, 60).until(
-                    EC.presence_of_element_located((By.ID, 'locationInputs'))
-                )
-            except:
-                self.driver.close()
-            
-            #Enters value into the search bar. 
-            search = self.driver.find_element_by_id('locationInputs')
-            search.clear()
-            search.send_keys(i)
-            button = self.driver.find_element_by_id("dropdownBtn")
-            button.click()
             
             cards_path = '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
             
