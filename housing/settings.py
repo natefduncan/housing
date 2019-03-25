@@ -67,8 +67,6 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
-    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
-    'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
     'scrapy_proxies.RandomProxy': 100,
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
@@ -77,6 +75,8 @@ DOWNLOADER_MIDDLEWARES = {
 PROXY_LIST = str(path) + "/housing/spiders/proxy_list.txt"
 PROXY_MODE = 0
 RETRY_TIMES = 10
+
+RANDOM_UA_PER_PROXY = True
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
