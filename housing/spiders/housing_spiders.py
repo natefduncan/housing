@@ -605,7 +605,7 @@ class trulia(scrapy.Spider):
             
     def parse(self, response):
         
-        url = self.driver.get(response.url)
+        self.driver.get(response.url)
         
         for i in areas: 
             
