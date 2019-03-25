@@ -607,8 +607,7 @@ class trulia(scrapy.Spider):
         
         self.driver.get(response.url)
         
-        cards_path = '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
-        
+        cards_path = '/html/body/section/div[5]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
         try:
             element = WebDriverWait(self.driver, 120).until(
                 EC.presence_of_element_located((By.XPATH, cards_path))
