@@ -6141,3 +6141,231 @@ Xlib:  extension "XInputExtension" missing on display ":1.0".
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
 
+1553463760468	geckodriver	INFO	Listening on 127.0.0.1:42459
+1553463763056	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553463770744	Marionette	INFO	Listening on port 35827
+1553463771368	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+1553463844916	geckodriver	INFO	Listening on 127.0.0.1:42901
+1553463846494	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553463850876	Marionette	INFO	Listening on port 38205
+1553463851372	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 1965] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1965] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553464136700	geckodriver	INFO	Listening on 127.0.0.1:40397
+1553464138278	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553464142384	Marionette	INFO	Listening on port 34169
+1553464142842	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 2156] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 2156] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553464777735	geckodriver	INFO	Listening on 127.0.0.1:36277
+1553464779493	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553464785788	Marionette	INFO	Listening on port 46225
+1553464786310	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+1553465566431	geckodriver	INFO	Listening on 127.0.0.1:53545
+1553465568025	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553465572476	Marionette	INFO	Listening on port 37135
+1553465572938	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+1553465677686	geckodriver	INFO	Listening on 127.0.0.1:48155
+1553465679372	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553465683654	Marionette	INFO	Listening on port 33859
+1553465684114	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html, line 122: unreachable code after return statement
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 3060] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 3060] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 3060] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553465768865	geckodriver	INFO	Listening on 127.0.0.1:37287
+1553465770507	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553465775078	Marionette	INFO	Listening on port 33777
+1553465775624	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 3255] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3255] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553466344716	geckodriver	INFO	Listening on 127.0.0.1:52947
+1553466346307	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553466350662	Marionette	INFO	Listening on port 39279
+1553466351130	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 3585] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 3585] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3585] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553466483732	geckodriver	INFO	Listening on 127.0.0.1:40297
+1553466485350	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553466489900	Marionette	INFO	Listening on port 36345
+1553466490424	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 3796] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 3796] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553466709069	geckodriver	INFO	Listening on 127.0.0.1:44143
+1553466710673	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553466715020	Marionette	INFO	Listening on port 44139
+1553466715558	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript error: https://pixel.adsafeprotected.com/rjss/st/234123/32353176/skeleton.js, line 873: NS_ERROR_NOT_INITIALIZED: 
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript error: https://c.amazon-adsystem.com/aax2/apstag.js, line 2: TypeError: O.hasAdServerObjectLoaded is not a function
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 4020] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 4020] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
