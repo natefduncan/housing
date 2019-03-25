@@ -76,6 +76,7 @@ DOWNLOADER_MIDDLEWARES = {
 
 PROXY_LIST = str(path) + "/housing/spiders/proxy_list.txt"
 PROXY_MODE = 0
+RETRY_TIMES = 10
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
