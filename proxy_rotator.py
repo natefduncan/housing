@@ -14,9 +14,9 @@ for i in range(0, 20):
     data = json.loads(resp.text)
     proxies.append(data['proxy'])
 
-filename = "proxy_list.txt"
+filename = "housing/spiders/proxy_list.txt"
 
-f = open(filename, 'a+')
+f = open(filename, 'w+')
 
 for m in proxies:
     print(m)
