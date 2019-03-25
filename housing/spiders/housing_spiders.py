@@ -607,25 +607,23 @@ class trulia(scrapy.Spider):
         
         self.driver.get(response.url)
         
-        for i in areas: 
-            
-            cards_path = '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
-            
-            try:
-                element = WebDriverWait(self.driver, 120).until(
-                    EC.presence_of_element_located((By.XPATH, cards_path))
-                )
-            except:
-                self.driver.close()
-            
-            response = scrapy.Selector(text=self.driver.page_source)
-            
-            links_xpath = "//body//a[@class='tileLink']/@href"
-            
-            links = response.xpath(links_xpath)
-            
-            for i in links:
-              print(i)
+        cards_path = '/html/body/section/div[3]/div[1]/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul/li'
+        
+        try:
+            element = WebDriverWait(self.driver, 120).until(
+                EC.presence_of_element_located((By.XPATH, cards_path))
+            )
+        except:
+            self.driver.close()
+        
+        response = scrapy.Selector(text=self.driver.page_source)
+        
+        links_xpath = "//body//a[@class='tileLink']/@href"
+        
+        links = response.xpath(links_xpath)
+        
+        for i in links:
+          print(i)
         
 
         
