@@ -17,6 +17,8 @@ from pathlib import Path #For working with system independent paths
 import datetime as dt #For working with and converting times
 import math #For some math functions
 import pandas as pd #For working with dataframes
+from random import randint #To set random delays
+from time import sleep #For pausing code
 
 #FOR SELENIUM
 
@@ -614,6 +616,8 @@ class trulia(scrapy.Spider):
             )
         except:
             self.driver.close()
+        
+        sleep(randint(0,7))
         
         response = scrapy.Selector(text=self.driver.page_source)
         
