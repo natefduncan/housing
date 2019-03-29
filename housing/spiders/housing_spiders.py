@@ -268,8 +268,6 @@ class realtor_data(scrapy.Spider):
     
     for url in urls:
         yield scrapy.Request(url=url, callback=self.parse)
-            
-  def __init__(self):
     
   def parse(self, response):
     now = dt.datetime.now()
