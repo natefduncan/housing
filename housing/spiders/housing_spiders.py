@@ -285,7 +285,7 @@ class realtor_data(scrapy.Spider):
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
     price_xpath = "//input[@id='price']/@value"
     beds_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/span/text()"
-    beds_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
+    beds_labels_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
 
     '''
     baths_xpath
@@ -305,6 +305,7 @@ class realtor_data(scrapy.Spider):
     print(request.xpath(block_xpath).extract())
     print(request.xpath(price_xpath).extract()[0])
     print(request.xpath(beds_xpath).extract())
+    print(request.xpath(beds_labels_xpath).extract())
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
     state = address.split(",")[2].split(" ")[0]
