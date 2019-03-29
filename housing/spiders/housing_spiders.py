@@ -80,20 +80,20 @@ def parse_top(x, labels): #For Realtor
     
     for i in range(0, len(temp)):
       lab = labels[i]
-        if lab == "beds":
-            beds = temp[i]
-        elif lab == "full":
-            baths = temp[i]
-        elif lab == "baths":
-            baths = temp[i]
-        elif lab == "half baths":
-            half_baths = temp[i]
-        elif lab == "sq ft":
-            sq_ft = temp[i]
-        elif lab == "sqft lot":
-            sqft_lot = temp[i]
-        elif lab == "acres lot":
-            acres_lot = temp[i]
+      if lab == "beds":
+          beds = temp[i]
+      elif lab == "full":
+          baths = temp[i]
+      elif lab == "baths":
+          baths = temp[i]
+      elif lab == "half baths":
+          half_baths = temp[i]
+      elif lab == "sq ft":
+          sq_ft = temp[i]
+      elif lab == "sqft lot":
+          sqft_lot = temp[i]
+      elif lab == "acres lot":
+          acres_lot = temp[i]
     print(["beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot"])
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
