@@ -39,6 +39,11 @@ from pyvirtualdisplay import Display
 path = Path(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(str(path))
 
+def unique(x):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
+
 def parse_price(x): #For Realtor
     x  = "".join(x)
     return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace(r"\u", ""))
@@ -72,11 +77,11 @@ def parse_top(x, labels): #For Realtor
     
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
-    temp = list(set(temp))
+    temp = unique(temp)
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
-    labels = list(set(labels))
+    labels = unique(temp)
     
     for i in range(0, len(temp)):
       lab = labels[i]
