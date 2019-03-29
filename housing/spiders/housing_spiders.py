@@ -74,10 +74,12 @@ def parse_top(x, labels): #For Realtor
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
     temp = list(unique_everseen(temp))
+    print(temp)
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
     labels = list(unique_everseen(temp))
+    print(labels)
     
     for i in range(0, len(temp)):
       lab = labels[i]
