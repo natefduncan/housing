@@ -285,7 +285,7 @@ class realtor_data(scrapy.Spider):
     url = response.request.url
     
     counter = 1
-    
+    print(response)
     request = scrapy.Selector(response)
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
