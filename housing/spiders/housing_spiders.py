@@ -72,11 +72,11 @@ def parse_top(x, labels): #For Realtor
     
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
-    temp = set(temp)
+    temp = list(set(temp))
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
-    labels = set(labels)
+    labels = list(set(labels))
     
     for i in range(0, len(temp)):
       lab = labels[i]
