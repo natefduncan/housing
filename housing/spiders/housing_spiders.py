@@ -101,7 +101,6 @@ def parse_bottom(x): #For Realtor
     tp = ""
     built = ""
     style = ""
-    descr = ""
     
     mx = max([len(i) for i in x])
     
@@ -109,20 +108,18 @@ def parse_bottom(x): #For Realtor
         temp = x[i]
         temp = temp.replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         if temp == "Status":
-            status = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+            status = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Price/Sq Ft":
-            price_sq_ft = x[i+2].replace("\n", "").replace(",", "").replace("$","").replace(r"\u", "").strip()
+            price_sq_ft = x[i+1].replace("\n", "").replace(",", "").replace("$","").replace(r"\u", "").strip()
         elif temp == "On realtor.com":
-            on_realtor = x[i+3].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+            on_realtor = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Type":
-            tp = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+            tp = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Built":
-            built = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+            built = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Style":
-            style = x[i+3].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
-        elif len(x[i]) == mx:
-            descr = x[i].replace("\n", "").replace(r"\u", "").strip()
-    return [status, price_sq_ft, on_realtor, tp, built, style, descr]
+            style = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+    return [status, price_sq_ft, on_realtor, tp, built, style]
 
 def flatten(x): #List of lists to list. 
     temp = []
@@ -308,7 +305,7 @@ class realtor_data(scrapy.Spider):
     print(request.xpath(beds_xpath).extract())
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
-    state = address.split(",")[2]
+    state = address.split(",")[2].split(" ")[0]
     zip_code = get_ints(address.split(",")[2])
     address = address.split(",")[0]
     print([address, city, state, zip_code])
@@ -317,6 +314,7 @@ class realtor_data(scrapy.Spider):
     print(parse_bottom(request.xpath(items_xpath).extract()))
     print(request.xpath(desc_xpath).extract())
     
+    .encode('utf-8').strip()
     
     '''
 
