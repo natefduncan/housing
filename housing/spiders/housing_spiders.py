@@ -20,6 +20,7 @@ import math #For some math functions
 import pandas as pd #For working with dataframes
 from random import randint #To set random delays
 from time import sleep #For pausing code
+from  more_itertools import unique_everseen #Ordered uniques
 
 #FOR SELENIUM
 
@@ -38,11 +39,6 @@ from pyvirtualdisplay import Display
     
 path = Path(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(str(path))
-
-def unique(seq):
-    seen = set()
-    seen_add = seen.add
-    return [x for x in seq if not (x in seen or seen_add(x))]
 
 def parse_price(x): #For Realtor
     x  = "".join(x)
@@ -77,11 +73,11 @@ def parse_top(x, labels): #For Realtor
     
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
-    temp = unique(temp)
+    temp = list(unique_everseen(temp))
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
-    labels = unique(temp)
+    labels = list(unique_everseen(temp))
     
     for i in range(0, len(temp)):
       lab = labels[i]
