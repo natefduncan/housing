@@ -39,7 +39,7 @@ from pyvirtualdisplay import Display
 path = Path(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(str(path))
 
-def unique(x):
+def unique(seq):
     seen = set()
     seen_add = seen.add
     return [x for x in seq if not (x in seen or seen_add(x))]
