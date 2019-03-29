@@ -9,6 +9,7 @@ SCRAPING HOUSING DATA
 """
 
 import scrapy #Framework for scraping
+from scrapy import Selector
 import os #For working with files
 import unicodedata as uc #Unicode to string
 import time #For pausing code
@@ -269,8 +270,6 @@ class realtor_data(scrapy.Spider):
         yield scrapy.Request(url=url, callback=self.parse)
             
   def __init__(self):
-      
-    self.driver = webdriver.Firefox()
     
   def parse(self, response):
     now = dt.datetime.now()
@@ -284,24 +283,25 @@ class realtor_data(scrapy.Spider):
     except:
       pass
     url = response.request.url
-    self.driver.get(url)
     
     counter = 1
     
-    description_wait_xpath = "//*[@id='ldp-detail-overview']//text()"
-    description_xpath = "//*[@id='ldp-detail-overview']//text()"
-
-    try:
-        element = WebDriverWait(self.driver, 120).until(
-            EC.presence_of_element_located((By.XPATH, description_wait_xpath))
-        )
-    except:
-        self.driver.close()
-        
-    response = scrapy.Selector(text=self.driver.page_source)
-    price_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[1]/div/div[1]/div/div//text()"
-    address_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[2]/div/h1//text()"
-    top_info_xpath = "/html/body/div[5]/div[4]/div[2]/div[2]/div/section[1]/div[1]/div[2]/div[2]/div/div[1]/ul/li//text()"
+    request = scrapy.Selector(response)
+    
+    block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
+    price_xpath = "//input[@id='home_price']/@value"
+    address_xpath = "//meta[@itemprop='streetAddress']/@content"
+    city_xpath = "//meta[@itemprop='addressLocality']/@content"
+    state_xpath = "//meta[@itemprop='addressRegion']/@content"
+    zip_xpath = "//meta[@itemprop='postalCode']/@content"
+    lat_xpath = "//meta[@itemprop='latitude']/@content"
+    lon_xpath = "//meta[@itemprop='longitude']/@content"
+    desc_xpath = "//p[@id='ldp-detail-romance']/text()"
+    
+    for i in [block_xpath, price_xpath, address_xpath, city_xpath, state_xpath, zip_xpath, desc_xpath, lat_xpath, lon_xpath]:
+      print(request.xpath(i))
+    
+    '''
 
     output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
     output = flatten(output)
@@ -323,6 +323,7 @@ class realtor_data(scrapy.Spider):
       counter += 1
     
     df.to_csv(pd_file_name, index = False)
+    '''
     
 class homefinder(scrapy.Spider):
     
