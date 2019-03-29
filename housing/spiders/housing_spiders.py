@@ -130,7 +130,7 @@ def parse_bottom(x): #For Realtor
         elif temp == "Built":
             built = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Style":
-            style = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
+            style = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
     return [status, price_sq_ft, on_realtor, tp, built, style]
 
 def flatten(x): #List of lists to list. 
