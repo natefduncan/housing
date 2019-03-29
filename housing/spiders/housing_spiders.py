@@ -306,10 +306,15 @@ class realtor_data(scrapy.Spider):
     print(request.xpath(block_xpath).extract())
     print(request.xpath(price_xpath).extract()[0])
     print(request.xpath(beds_xpath).extract())
-    print(request.xpath(address_xpath).extract()[0])
+    address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
+    city = address.split(",")[1]
+    state = address.split(",")[2]
+    zip_code = get_ints(address.split(",")[2])
+    address = address.split(",")[0]
+    print([address, city, state, zip_code])
     print(request.xpath(lat_xpath).extract()[0])
     print(request.xpath(lon_xpath).extract()[0])
-    print(request.xpath(items_xpath).extract())
+    print(parse_bottom(request.xpath(items_xpath).extract()))
     print(request.xpath(desc_xpath).extract())
     
     
