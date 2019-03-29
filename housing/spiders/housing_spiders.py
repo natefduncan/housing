@@ -295,15 +295,15 @@ class realtor_data(scrapy.Spider):
     lon_xpath = "//meta[@itemprop='longitude']/@content"
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
-    print(request.xpath(block_xpath))
-    print(request.xpath(price_xpath))
-    print(request.xpath(address_xpath))
-    print(request.xpath(city_xpath))
-    print(request.xpath(state_xpath))
-    print(request.xpath(zip_xpath))
-    print(request.xpath(lat_xpath))
-    print(request.xpath(lon_xpath))
-    print(request.xpath(desc_xpath))
+    print(request.xpath(block_xpath).extract()[0])
+    print(request.xpath(price_xpath).extract()[0])
+    print(request.xpath(address_xpath).extract()[0])
+    print(request.xpath(city_xpath).extract()[0])
+    print(request.xpath(state_xpath).extract()[0])
+    print(request.xpath(zip_xpath).extract()[0])
+    print(request.xpath(lat_xpath).extract()[0])
+    print(request.xpath(lon_xpath).extract()[0])
+    print(request.xpath(desc_xpath).extract()[0])
     
     
     
