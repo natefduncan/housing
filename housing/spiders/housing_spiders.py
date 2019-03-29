@@ -286,10 +286,10 @@ class realtor_data(scrapy.Spider):
     request = scrapy.Selector(response)
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
-    price_xpath = "//input[@id='home_price']/@value"
-    address_xpath = "//meta[@itemprop='streetAddress']/@content"
-    city_xpath = "//meta[@itemprop='addressLocality']/@content"
-    state_xpath = "//meta[@itemprop='addressRegion']/@content"
+    price_xpath = "//input[@id='price']/@value"
+    address_xpath = "//input[@id='full_address_display']/@value"
+    city_xpath = "//input[@id='city']/@value"
+    state_xpath = "//input[@id='state']/@value"
     zip_xpath = "//meta[@itemprop='postalCode']/@content"
     lat_xpath = "//meta[@itemprop='latitude']/@content"
     lon_xpath = "//meta[@itemprop='longitude']/@content"
@@ -301,8 +301,8 @@ class realtor_data(scrapy.Spider):
     print(request.xpath(city_xpath).extract())
     print(request.xpath(state_xpath).extract())
     print(request.xpath(zip_xpath).extract())
-    print(request.xpath(lat_xpath).extract())
-    print(request.xpath(lon_xpath).extract())
+    print(request.xpath(lat_xpath).extract()[0])
+    print(request.xpath(lon_xpath).extract()[0])
     print(request.xpath(desc_xpath).extract())
     
     
