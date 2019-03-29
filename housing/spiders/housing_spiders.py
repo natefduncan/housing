@@ -283,7 +283,6 @@ class realtor_data(scrapy.Spider):
     url = response.request.url
     
     counter = 1
-    print(response)
     request = scrapy.Selector(response)
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
@@ -297,7 +296,7 @@ class realtor_data(scrapy.Spider):
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
     for i in [block_xpath, price_xpath, address_xpath, city_xpath, state_xpath, zip_xpath, desc_xpath, lat_xpath, lon_xpath]:
-      print(request.xpath(i))
+      print(request.xpath(i).extract()[0])
     
     '''
 
