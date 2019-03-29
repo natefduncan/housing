@@ -314,8 +314,6 @@ class realtor_data(scrapy.Spider):
     print(parse_bottom(request.xpath(items_xpath).extract()))
     print(request.xpath(desc_xpath).extract())
     
-    .encode('utf-8').strip()
-    
     '''
 
     output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
