@@ -8,6 +8,8 @@ SCRAPING HOUSING DATA
 @author: User
 """
 
+#Changes
+
 import scrapy #Framework for scraping
 from scrapy import Selector
 import os #For working with files
@@ -40,6 +42,11 @@ from pyvirtualdisplay import Display
 path = Path(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(str(path))
 
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
+
 def parse_price(x): #For Realtor
     x  = "".join(x)
     return get_ints(x.replace("\n", "").replace(",", "").replace(" ", "").replace("$", "").replace(r"\u", ""))
@@ -63,6 +70,12 @@ def parse_top(x, labels): #For Realtor
     options:
     beds, baths, sq ft, sqft lot, acres lot, 3 full, 2 half baths
     '''
+    chunk_counter = 2
+    for i in range(0, len(x)):
+      if chunks(x, chunk_counter)[0] == chunks(x, chunk_counter[1]):
+        break
+      else:
+        chunk_counter += 1
     
     beds = ""
     baths = ""
@@ -73,12 +86,12 @@ def parse_top(x, labels): #For Realtor
     
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
-    temp = list(unique_everseen(temp))
+    temp = temp[:chunk_counter]
     print(temp)
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
-    labels = list(unique_everseen(labels))
+    labels = labels[:chunk_counter]
     print(labels)
     
     for i in range(0, len(temp)):
