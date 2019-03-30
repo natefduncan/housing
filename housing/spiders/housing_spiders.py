@@ -360,7 +360,6 @@ class realtor_data(scrapy.Spider):
       counter += 1
     
     df.to_csv(pd_file_name, index = False)
-    '''
     
 class homefinder(scrapy.Spider):
     
