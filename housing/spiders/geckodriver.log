@@ -6369,3 +6369,384 @@ JavaScript error: https://c.amazon-adsystem.com/aax2/apstag.js, line 2: TypeErro
 
 [Child 4020] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 4020] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553472221796	geckodriver	INFO	Listening on 127.0.0.1:58123
+1553472224037	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553472230664	Marionette	INFO	Listening on port 45587
+1553472231264	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 6059] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 6059] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553472608134	geckodriver	INFO	Listening on 127.0.0.1:41427
+1553472609736	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553472613960	Marionette	INFO	Listening on port 39481
+1553472614450	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 6312] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 6312] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553472710984	geckodriver	INFO	Listening on 127.0.0.1:58219
+1553472712673	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553472717726	Marionette	INFO	Listening on port 34491
+1553472718212	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 6452] WARNING: pipe error: Broken pipe: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 685
+[Child 6452] WARNING: pipe error: Broken pipe: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 685
+[Child 6452] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 6452] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553472919620	geckodriver	INFO	Listening on 127.0.0.1:52969
+1553472921232	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553472925700	Marionette	INFO	Listening on port 34469
+1553472926202	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 6641] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 6641] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 6641] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553474240540	geckodriver	INFO	Listening on 127.0.0.1:39915
+1553474242145	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553474246322	Marionette	INFO	Listening on port 40041
+1553474246802	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 7992] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 7992] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 7992] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553474336260	geckodriver	INFO	Listening on 127.0.0.1:49807
+1553474337856	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553474341952	Marionette	INFO	Listening on port 42559
+1553474342414	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 8158] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 8158] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553474478369	geckodriver	INFO	Listening on 127.0.0.1:53277
+1553474479970	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553474484574	Marionette	INFO	Listening on port 39657
+1553474485036	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 8352] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 8352] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553477097366	geckodriver	INFO	Listening on 127.0.0.1:59867
+1553477098960	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553477103112	Marionette	INFO	Listening on port 44219
+1553477103578	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 9177] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 9177] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553478112108	geckodriver	INFO	Listening on 127.0.0.1:49793
+1553478113719	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553478118404	Marionette	INFO	Listening on port 33273
+1553478118870	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+[Child 10012] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 10012] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+1553478390702	geckodriver	INFO	Listening on 127.0.0.1:46937
+1553478392309	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553478396860	Marionette	INFO	Listening on port 36699
+1553478397344	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 10262] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 10262] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553478462637	geckodriver	INFO	Listening on 127.0.0.1:33119
+1553478464236	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553478468390	Marionette	INFO	Listening on port 33115
+1553478468860	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 10419] WARNING: pipe error (14): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 10419] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 10419] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553478551334	geckodriver	INFO	Listening on 127.0.0.1:51799
+1553478552925	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553478557022	Marionette	INFO	Listening on port 36019
+1553478557496	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 10600] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 10600] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+1553478874155	geckodriver	INFO	Listening on 127.0.0.1:39355
+1553478875785	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553478880502	Marionette	INFO	Listening on port 44805
+1553478880978	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+1553479128571	geckodriver	INFO	Listening on 127.0.0.1:49837
+1553479130237	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553479134394	Marionette	INFO	Listening on port 40415
+1553479134860	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 11008] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 11008] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 11008] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553479321852	geckodriver	INFO	Listening on 127.0.0.1:35385
+1553479323410	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553479328188	Marionette	INFO	Listening on port 46231
+1553479328664	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Refused to create native OpenGL context because of blacklist entry: 
+JavaScript warning: https://client.perimeterx.net/PXYO6YjwLb/main.min.js, line 3: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Refused to create native OpenGL context because of blacklist entry: 
+* Exhausted GL driver options.
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 11203] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 322
+[Child 11203] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 11203] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553814033396	geckodriver	INFO	Listening on 127.0.0.1:39537
+1553814036019	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553814042390	Marionette	INFO	Listening on port 41835
+1553814043016	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 1312] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1312] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1553814179641	geckodriver	INFO	Listening on 127.0.0.1:52965
+1553814181249	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1553814185304	Marionette	INFO	Listening on port 34607
+1553814185772	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xE00003,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3E0003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+[Child 1693] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 1693] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
