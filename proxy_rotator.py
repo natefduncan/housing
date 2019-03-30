@@ -9,7 +9,7 @@ params = dict(
 
 proxies = []
 
-for i in range(0, 20):
+for i in range(0, 50):
     resp = requests.get(url=url, params=params)
     data = json.loads(resp.text)
     proxies.append(data['proxy'])
