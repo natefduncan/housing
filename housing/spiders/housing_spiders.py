@@ -111,6 +111,7 @@ def parse_top(x, labels): #For Realtor
           sqft_lot = temp[i]
       elif lab == "acres lot":
           acres_lot = temp[i]
+    
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
 def parse_bottom(x): #For Realtor
@@ -123,7 +124,6 @@ def parse_bottom(x): #For Realtor
     on_realtor = ""
     tp = ""
     built = ""
-    style = ""
     
     mx = max([len(i) for i in x])
     
@@ -140,9 +140,7 @@ def parse_bottom(x): #For Realtor
             tp = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
         elif temp == "Built":
             built = x[i+1].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
-        elif temp == "Style":
-            style = x[i+2].replace("\n", "").replace(",", "").replace(r"\u", "").strip()
-    return [status, price_sq_ft, on_realtor, tp, built, style]
+    return [status, price_sq_ft, on_realtor, tp, built]
 
 def flatten(x): #List of lists to list. 
     temp = []
@@ -322,6 +320,7 @@ class realtor_data(scrapy.Spider):
     lat_xpath = "//meta[@itemprop='latitude']/@content"
     lon_xpath = "//meta[@itemprop='longitude']/@content"
     items_xpath = "//li[@class='ldp-key-fact-item']/div/text()"
+    style_xpath = "//a[@data-omtag='ldp:propInfo:listingStyle']/text()"
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
     block = request.xpath(block_xpath).extract()
@@ -329,18 +328,27 @@ class realtor_data(scrapy.Spider):
     vals = request.xpath(info_xpath).extract()
     labs = request.xpath(info_labels_xpath).extract()
     top = parse_top(vals, labs)
+    if top[1]=="" & top[2]=="": #For when half baths
+    bath_xpath = "//span[contains(@class, 'data-value property-half-baths')]/text()"
+      try:
+        top[1] = request.xpath().extract()[0]
+        top[2] = request.xpath().extract()[1]
+      except:
+        pass
+    
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
-    state = address.split(",")[2].split(" ")[0]
+    state = address.split(",")[2].strip().split(" ")[0]
     zip_code = get_ints(address.split(",")[2])
     address = address.split(",")[0]
     full_address = [address, city, state, zip_code]
     lat = request.xpath(lat_xpath).extract()[0]
     lon = request.xpath(lon_xpath).extract()[0]
     items = parse_bottom(request.xpath(items_xpath).extract())
+    style = request.xpath(style_xpath)
     desc = request.xpath(desc_xpath).extract()
 
-    output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, desc]
+    output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
     output = flatten(output)
     for i in range(0, len(output)):
       try:
