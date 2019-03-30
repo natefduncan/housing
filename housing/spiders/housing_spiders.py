@@ -45,7 +45,10 @@ os.chdir(str(path))
 def chunks(l, n):
     """Yield successive n-sized chunks from l."""
     for i in range(0, len(l), n):
-        yield l[i:i + n]
+        return l[i:i + n] #list to list of lists
+        
+def check_equal(lst): #checks that all the values are the same in a list.
+   return lst[1:] == lst[:-1]
 
 def parse_price(x): #For Realtor
     x  = "".join(x)
@@ -72,7 +75,7 @@ def parse_top(x, labels): #For Realtor
     '''
     chunk_counter = 2
     for i in range(0, len(x)):
-      if chunks(x, chunk_counter)[0] == chunks(x, chunk_counter[1]):
+      if check_equal(chunks(x, chunk_counter)):
         break
       else:
         chunk_counter += 1
