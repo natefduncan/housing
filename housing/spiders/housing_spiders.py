@@ -73,7 +73,7 @@ def parse_top(x, labels): #For Realtor
     options:
     beds, baths, sq ft, sqft lot, acres lot, 3 full, 2 half baths
     '''
-    chunk_counter = 2
+    chunk_counter = 1
     for i in range(0, len(x)):
       if check_equal(list(chunks(x, chunk_counter))):
         break
@@ -90,12 +90,10 @@ def parse_top(x, labels): #For Realtor
     temp = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in x]
     temp = [i for i in temp if i != ""]
     temp = temp[:chunk_counter]
-    print(temp)
     
     labels = [i.replace("\n", "").replace(",", "").replace(r"\u", "").strip() for i in labels]
     labels = [i for i in labels if i != ""]
     labels = labels[:chunk_counter]
-    print(labels)
     
     for i in range(0, len(temp)):
       lab = labels[i]
@@ -113,7 +111,6 @@ def parse_top(x, labels): #For Realtor
           sqft_lot = temp[i]
       elif lab == "acres lot":
           acres_lot = temp[i]
-    print(["beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot"])
     return [beds, baths, half_baths, sq_ft, sqft_lot, acres_lot]
 
 def parse_bottom(x): #For Realtor
@@ -310,8 +307,8 @@ class realtor_data(scrapy.Spider):
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
     price_xpath = "//input[@id='price']/@value"
-    beds_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/span/text()"
-    beds_labels_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
+    info_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/span/text()"
+    info_labels_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
     '''
     baths_xpath
     sq_ft
@@ -327,29 +324,23 @@ class realtor_data(scrapy.Spider):
     items_xpath = "//li[@class='ldp-key-fact-item']/div/text()"
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
-    print(request.xpath(block_xpath).extract())
-    print(request.xpath(price_xpath).extract()[0])
-    vals = request.xpath(beds_xpath).extract()
-    print(vals)
-    labs = request.xpath(beds_labels_xpath).extract()
-    print(labs)
+    block = request.xpath(block_xpath).extract()
+    price = request.xpath(price_xpath).extract()[0]
+    vals = request.xpath(info_xpath).extract()
+    labs = request.xpath(info_labels_xpath).extract()
     top = parse_top(vals, labs)
-    print(top)
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
     state = address.split(",")[2].split(" ")[0]
     zip_code = get_ints(address.split(",")[2])
     address = address.split(",")[0]
-    print([address, city, state, zip_code])
-    print(request.xpath(lat_xpath).extract()[0])
-    print(request.xpath(lon_xpath).extract()[0])
-    print(request.xpath(items_xpath).extract())
-    print(parse_bottom(request.xpath(items_xpath).extract()))
-    print(request.xpath(desc_xpath).extract())
-    
-    '''
+    full_address = [address, city, state, zip_code]
+    lat = request.xpath(lat_xpath).extract()[0]
+    lon = request.xpath(lon_xpath).extract()[0]
+    items = parse_bottom(request.xpath(items_xpath).extract())
+    desc = request.xpath(desc_xpath).extract()
 
-    output = [dt.datetime.strftime(now, "%m/%d/%Y"), url, parse_address(response.xpath(address_xpath).extract()), parse_price(response.xpath(price_xpath).extract()), parse_top(response.xpath(top_info_xpath).extract()), parse_bottom(response.xpath(description_xpath).extract())]
+    output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, desc]
     output = flatten(output)
     for i in range(0, len(output)):
       try:

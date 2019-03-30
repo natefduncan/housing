@@ -9,14 +9,14 @@ params = dict(
 
 proxies = []
 
-for i in range(0, 50):
+for i in range(0, 30):
     resp = requests.get(url=url, params=params)
     data = json.loads(resp.text)
     proxies.append(data['proxy'])
 
 filename = "housing/spiders/proxy_list.txt"
 
-f = open(filename, 'w+')
+f = open(filename, 'a+')
 
 for m in proxies:
     print(m)
