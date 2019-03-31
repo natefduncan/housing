@@ -188,7 +188,10 @@ class realtor(scrapy.Spider):
   
   def parse(self, response):
       request = scrapy.Selector(response)
-      print(response.body)
+      urls = request.xpath("//li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]/@data_url").extract()
+      print(urls)
+      print(len(urls))
+      #print(response.body)
 
 '''
 class realtor(scrapy.Spider):
