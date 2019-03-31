@@ -209,6 +209,7 @@ class realtor(scrapy.Spider):
         '''
             
     def parse(self, response):
+        print(response.body)
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for j in areas:
