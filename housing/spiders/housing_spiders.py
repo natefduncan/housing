@@ -325,6 +325,8 @@ class realtor_data(scrapy.Spider):
       price = get_ints(request.xpath(price_xpath).extract()[0])
     elif len(request.xpath(price2_xpath).extract())>0:
       price = get_ints(request.xpath(price2_xpath).extract()[0])
+    else:
+      price = ""
     #Tops
     vals = request.xpath(info_xpath).extract()
     labs = request.xpath(info_labels_xpath).extract()
