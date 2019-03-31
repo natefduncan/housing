@@ -181,6 +181,17 @@ def remove_comma(x):
     return "".join(output)
 
 class realtor(scrapy.Spider):
+  name = "realtor"
+  start_urls = [
+    "https://www.realtor.com/realestateandhomes-search/Dallas_TX"
+  ]
+  
+  def parse(self, response):
+      request = scrapy.Selector(response)
+      print(request.body)
+
+'''
+class realtor(scrapy.Spider):
     
     name = "realtor"
     start_urls = [
@@ -198,7 +209,7 @@ class realtor(scrapy.Spider):
         self.driver = webdriver.Firefox()
         
         #self.driver.set_window_size(1920, 1080)
-        '''
+        ###
         #start Chrome
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
@@ -206,7 +217,7 @@ class realtor(scrapy.Spider):
             self.driver = webdriver.Chrome(chrome_options=options)
         except:
             pass
-        '''
+        ###
             
     def parse(self, response):
         areas = ["Dallas_TX"]
@@ -257,7 +268,7 @@ class realtor(scrapy.Spider):
               counter += 1
             page_counter += 1
             print("finished")
-
+'''
 class realtor_data(scrapy.Spider):
 
   name = "realtor_data"
@@ -293,7 +304,7 @@ class realtor_data(scrapy.Spider):
     #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
     pd_file_name = "realtor_data_2019.3.11.csv"
     
-    columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
+    columns = ["date_scraped", "url", "lat", "lon", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
     try:
       df = pd.read_csv(pd_file_name)
@@ -364,7 +375,7 @@ class realtor_data(scrapy.Spider):
     else:
       desc = ""
 
-    output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
+    output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, lat, lon, full_address, price, top, items, style, desc]
     output = flatten(output)
     for i in range(0, len(output)):
       try:
