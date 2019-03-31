@@ -375,7 +375,6 @@ class realtor_data(scrapy.Spider):
     print(len(columns))
     df.loc[len(df)] = output
     
-    '''
     if counter == 5:
       df.to_csv(pd_file_name, index = False)
       counter = 1
@@ -383,7 +382,6 @@ class realtor_data(scrapy.Spider):
       counter += 1
     
     df.to_csv(pd_file_name, index = False)
-    '''
     
 class homefinder(scrapy.Spider):
     
