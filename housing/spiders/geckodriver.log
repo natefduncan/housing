@@ -6750,3 +6750,16 @@ Xlib:  extension "XInputExtension" missing on display ":1.0".
 
 [Child 1693] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
 [Child 1693] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+1554003126194	geckodriver	INFO	Listening on 127.0.0.1:53341
+1554003128779	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+Error: GDK_BACKEND does not match available displays
+1554003160415	geckodriver	INFO	Listening on 127.0.0.1:42581
+1554003162006	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1554003168180	Marionette	INFO	Listening on port 36495
+1554003168818	Marionette	WARN	TLS certificate errors will be ignored for this session
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+Xlib:  extension "XInputExtension" missing on display ":1.0".
+[Child 31490] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
+[Child 31490] ###!!! ABORT: Aborting on channel error.: file /build/firefox-esr-YKrXxr/firefox-esr-52.9.0esr/ipc/glue/MessageChannel.cpp, line 2152
