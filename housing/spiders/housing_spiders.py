@@ -302,16 +302,16 @@ class realtor_data(scrapy.Spider):
   
   def start_requests(self):
     now = dt.datetime.now()
-    #file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
-    file_name = "realtor_urls_2019.3.11.txt"
+    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+    #file_name = "realtor_urls_2019.3.11.txt"
     
     with open(file_name) as f:
       urls = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
     urls = [x.strip().replace("\n", "") for x in urls]
     
-    #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
-    pd_file_name = "realtor_data_2019.3.11.csv"
+    pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
+    #pd_file_name = "realtor_data_2019.3.31.csv"
     
     columns = ["date_scraped", "url", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
