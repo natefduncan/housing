@@ -182,16 +182,39 @@ def remove_comma(x):
 
 class realtor(scrapy.Spider):
   name = "realtor"
-  start_urls = [
-    "https://www.realtor.com/realestateandhomes-search/Dallas_TX"
-  ]
+  
+  def start_requests(self):
+    areas = ["Dallas_TX"]
+    base = "https://www.realtor.com/realestateandhomes-search/"
+    for i in areas:
+      url = base + i
+      yield scrapy.Request(url=url, callback=self.parse, meta={'area' : i})
   
   def parse(self, response):
-      request = scrapy.Selector(response)
-      urls = request.xpath("//li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]/@data-url").extract()
-      print(urls)
-      print(len(urls))
-      #print(response.body)
+    request = scrapy.Selector(response)
+    area = response.meta['area']
+    pages_path = "//*[@id='search-result-count']/text()"
+    pages = int(math.ceil(int(get_ints(response.xpath(pages_path).extract()[0])) / float(43.8)))
+    base = "https://www.realtor.com/realestateandhomes-search/"
+    counter = 1
+    while counter < pages:
+      url = (base+area+("/pg-%s") % str(counter))
+      yield scrapy.Request(url=url, callback=self.parse2)
+      counter += 1
+      
+  def parse2(self, repsonse):
+    request = scrapy.Select(response)
+    urls = request.xpath("//li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]/@data-url").extract()
+    urls = [link.encode('utf-8').strip() for link in urls]
+    base_url = "https://www.realtor.com"
+    urls = [base_url + link for i in ]
+    now = dt.datetime.now()
+    file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
+    for link in urls:
+      with open(file_name, "a+") as file:
+        file.write(link)
+        file.write("\n")
+        print("Added: " + link)
 
 '''
 class realtor(scrapy.Spider):
