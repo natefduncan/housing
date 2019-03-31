@@ -324,7 +324,8 @@ class realtor_data(scrapy.Spider):
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
     block = request.xpath(block_xpath).extract()
-    price = request.xpath(price_xpath).extract()
+    if len(request.xpath(price_xpath).extract())>0:
+      price = request.xpath(price_xpath).extract()[0]
     vals = request.xpath(info_xpath).extract()
     labs = request.xpath(info_labels_xpath).extract()
     
