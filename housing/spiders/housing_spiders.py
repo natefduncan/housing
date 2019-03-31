@@ -377,11 +377,26 @@ class realtor_data(scrapy.Spider):
         top[2] = request.xpath(bath_xpath).extract()[1]
     #Address
     if request.xpath(address_xpath).extract() > 0:
-      address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
-      city = address.split(",")[1]
-      state = address.split(",")[2].strip().split(" ")[0]
-      zip_code = get_ints(address.split(",")[2])
-      address = address.split(",")[0]
+      try:
+        address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
+      except:
+        address = ""
+      try:
+        city = address.split(",")[1]
+      except:
+        city = ""
+      try:
+        state = address.split(",")[2].strip().split(" ")[0]
+      except:
+        state = ""
+      try:
+        zip_code = get_ints(address.split(",")[2])
+      except:
+        zip_code = ""
+      try:
+        address = address.split(",")[0]
+      except:
+        address = ""
       full_address = [address, city, state, zip_code]
     else:
       full_address = ["", "", "", ""]
