@@ -376,15 +376,18 @@ class realtor_data(scrapy.Spider):
         top[1] = request.xpath(bath_xpath).extract()[0]
         top[2] = request.xpath(bath_xpath).extract()[1]
     #Address
-    address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
-    city = address.split(",")[1]
-    state = address.split(",")[2].strip().split(" ")[0]
-    zip_code = get_ints(address.split(",")[2])
-    address = address.split(",")[0]
-    full_address = [address, city, state, zip_code]
+    if request.xpath(address_xpath).extract() > 0:
+      address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
+      city = address.split(",")[1]
+      state = address.split(",")[2].strip().split(" ")[0]
+      zip_code = get_ints(address.split(",")[2])
+      address = address.split(",")[0]
+      full_address = [address, city, state, zip_code]
+    else:
+      full_address = ["", "", "", ""]
     #Latitude, Longitude
-    lat = request.xpath(lat_xpath).extract()
-    lon = request.xpath(lon_xpath).extract()
+    lat = request.xpath(lat_xpath).extract()[0]
+    lon = request.xpath(lon_xpath).extract()[0]
     #Items
     items = parse_bottom(request.xpath(items_xpath).extract())
     #Style
