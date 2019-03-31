@@ -184,7 +184,8 @@ class realtor(scrapy.Spider):
   name = "realtor"
   
   def start_requests(self):
-    areas = ["Dallas_TX"]
+    areas = ["Dallas-County_TX", "Collin-County_TX", "Denton-County_TX", "Rockwall-County_TX", "Hunt-County_TX", "Tarrant-County_TX", 
+    "Johnson-County_TX", "Ellis-County_TX", "Kaufman-County_TX"]
     base = "https://www.realtor.com/realestateandhomes-search/"
     for i in areas:
       url = base + i
