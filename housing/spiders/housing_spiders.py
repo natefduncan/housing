@@ -329,7 +329,7 @@ class realtor_data(scrapy.Spider):
   def parse(self, response):
     now = dt.datetime.now()
     #pd_file_name = "realtor_data_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".csv"
-    pd_file_name = "realtor_data_2019.3.11.csv"
+    pd_file_name = "realtor_data_2019.3.31.csv"
     
     columns = ["date_scraped", "url", "lat", "lon", "address", "city", "state", "zip", "price", "beds", "baths", "half_baths", "sq_ft", "sqft_lot", "acres_lot", "status", "price_sq_ft", "on_realtor", "type", "built", "style", "description"]
     df = pd.DataFrame(columns=columns)
