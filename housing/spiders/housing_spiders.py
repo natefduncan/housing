@@ -304,7 +304,7 @@ class realtor_data(scrapy.Spider):
     request = scrapy.Selector(response)
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
-    price_xpath = "//input[@id='price']/@value"
+    price_xpath = "//input[@id='home_price']/@value"
     info_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/span/text()"
     info_labels_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
     '''
@@ -343,7 +343,7 @@ class realtor_data(scrapy.Spider):
     lat = request.xpath(lat_xpath).extract()[0]
     lon = request.xpath(lon_xpath).extract()[0]
     items = parse_bottom(request.xpath(items_xpath).extract())
-    style = request.xpath(style_xpath)
+    style = request.xpath(style_xpath).extract()[0]
     desc = request.xpath(desc_xpath).extract()
 
     output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
