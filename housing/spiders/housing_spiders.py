@@ -349,6 +349,7 @@ class realtor_data(scrapy.Spider):
     #Items
     items = parse_bottom(request.xpath(items_xpath).extract())
     #Style
+    print(request.xpath(style_xpath).extract())
     if len(request.xpath(style_xpath).extract())>1:
       style = ",".join(request.xpath(style_xpath).extract())
     elif len(request.xpath(style_xpath).extract())==0:
