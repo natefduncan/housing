@@ -333,8 +333,8 @@ class realtor_data(scrapy.Spider):
     if top[1]=="" and top[2]=="": #For when half baths
       bath_xpath = "//span[contains(@class, 'data-value property-half-baths')]/text()"
       try:
-        top[1] = request.xpath(bath_xpath).extract()
-        top[2] = request.xpath(bath_xpath).extract()
+        top[1] = request.xpath(bath_xpath).extract()[0]
+        top[2] = request.xpath(bath_xpath).extract()[1]
       except:
         pass
     
