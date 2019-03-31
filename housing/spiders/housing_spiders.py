@@ -324,17 +324,19 @@ class realtor_data(scrapy.Spider):
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
     block = request.xpath(block_xpath).extract()
-    try:
-      price = request.xpath(price_xpath).extract()[0]
+    price = request.xpath(price_xpath).extract()
     vals = request.xpath(info_xpath).extract()
     labs = request.xpath(info_labels_xpath).extract()
     
     top = parse_top(vals, labs)
+    
     if top[1]=="" and top[2]=="": #For when half baths
       bath_xpath = "//span[contains(@class, 'data-value property-half-baths')]/text()"
       try:
         top[1] = request.xpath(bath_xpath).extract()[0]
         top[2] = request.xpath(bath_xpath).extract()[1]
+      except:
+        pass
     
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
