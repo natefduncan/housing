@@ -304,7 +304,7 @@ class realtor_data(scrapy.Spider):
     request = scrapy.Selector(response)
     
     block_xpath = "//h2[@class='title-section-detail']/text()" #'Blocked IP Address'
-    price_xpath = "//input[@id='home_price']/@value"
+    price_xpath = "//input[@id='price']/@value"
     info_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/span/text()"
     info_labels_xpath = "//ul[contains(@class, 'property-meta list-horizontal list-style-disc list-spaced')]/li/text()"
     '''
@@ -324,15 +324,17 @@ class realtor_data(scrapy.Spider):
     desc_xpath = "//p[@id='ldp-detail-romance']/text()"
     
     block = request.xpath(block_xpath).extract()
-    price = request.xpath(price_xpath).extract()[0]
+    try:
+      price = request.xpath(price_xpath).extract()[0]
     vals = request.xpath(info_xpath).extract()
     labs = request.xpath(info_labels_xpath).extract()
     
     top = parse_top(vals, labs)
     if top[1]=="" and top[2]=="": #For when half baths
       bath_xpath = "//span[contains(@class, 'data-value property-half-baths')]/text()"
-      top[1] = request.xpath(bath_xpath).extract()[0]
-      top[2] = request.xpath(bath_xpath).extract()[1]
+      try:
+        top[1] = request.xpath(bath_xpath).extract()[0]
+        top[2] = request.xpath(bath_xpath).extract()[1]
     
     address = request.xpath(address_xpath).extract()[0].encode('utf-8').strip()
     city = address.split(",")[1]
