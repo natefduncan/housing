@@ -333,8 +333,8 @@ class realtor_data(scrapy.Spider):
     if top[1]=="" and top[2]=="": #For when half baths
       bath_xpath = "//span[contains(@class, 'data-value property-half-baths')]/text()"
       try:
-        top[1] = request.xpath(bath_xpath).extract()[0]
-        top[2] = request.xpath(bath_xpath).extract()[1]
+        top[1] = request.xpath(bath_xpath).extract()
+        top[2] = request.xpath(bath_xpath).extract()
       except:
         pass
     
@@ -344,10 +344,10 @@ class realtor_data(scrapy.Spider):
     zip_code = get_ints(address.split(",")[2])
     address = address.split(",")[0]
     full_address = [address, city, state, zip_code]
-    lat = request.xpath(lat_xpath).extract()[0]
-    lon = request.xpath(lon_xpath).extract()[0]
+    lat = request.xpath(lat_xpath).extract()
+    lon = request.xpath(lon_xpath).extract()
     items = parse_bottom(request.xpath(items_xpath).extract())
-    style = request.xpath(style_xpath).extract()[0]
+    style = request.xpath(style_xpath).extract()
     desc = request.xpath(desc_xpath).extract()
 
     output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
