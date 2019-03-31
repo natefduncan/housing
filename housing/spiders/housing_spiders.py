@@ -209,7 +209,6 @@ class realtor(scrapy.Spider):
         '''
             
     def parse(self, response):
-        print(response.body)
         areas = ["Dallas_TX"]
         base = "https://www.realtor.com/realestateandhomes-search/"
         for j in areas:
@@ -221,6 +220,7 @@ class realtor(scrapy.Spider):
             print(pages)
             print("-" * 30)
             url = (base+j+("/pg-%s") % str(page_counter))
+            
             self.driver.get(url)
             time.sleep(5)
         
@@ -359,8 +359,10 @@ class realtor_data(scrapy.Spider):
     #Description
     if len(request.xpath(desc_xpath).extract())>1:
       desc = ",".join(request.xpath(desc_xpath).extract())
-    else:
+    elif len(request.xpath(desc_xpath).extract())==0:
       desc = request.xpath(desc_xpath).extract()
+    else:
+      desc = ""
 
     output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
     output = flatten(output)
