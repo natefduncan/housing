@@ -207,7 +207,7 @@ class realtor(scrapy.Spider):
     urls = request.xpath("//li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]/@data-url").extract()
     urls = [link.encode('utf-8').strip() for link in urls]
     base_url = "https://www.realtor.com"
-    urls = [base_url + link for i in ]
+    urls = [base_url + link for link in urls]
     now = dt.datetime.now()
     file_name = "realtor_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
     for link in urls:
