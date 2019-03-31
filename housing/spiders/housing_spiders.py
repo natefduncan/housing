@@ -203,7 +203,7 @@ class realtor(scrapy.Spider):
       counter += 1
       
   def parse2(self, response):
-    request = scrapy.Select(response)
+    request = scrapy.Selector(response)
     urls = request.xpath("//li[contains(@class, 'component_property-card js-component_property-card js-quick-view')]/@data-url").extract()
     urls = [link.encode('utf-8').strip() for link in urls]
     base_url = "https://www.realtor.com"
