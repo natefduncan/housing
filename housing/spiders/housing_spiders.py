@@ -359,7 +359,7 @@ class realtor_data(scrapy.Spider):
     #Description
     if len(request.xpath(desc_xpath).extract())>1:
       desc = ",".join(request.xpath(desc_xpath).extract())
-    elif len(request.xpath(desc_xpath).extract())==0:
+    elif len(request.xpath(desc_xpath).extract())==1:
       desc = request.xpath(desc_xpath).extract()
     else:
       desc = ""
