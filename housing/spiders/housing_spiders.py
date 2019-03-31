@@ -348,7 +348,10 @@ class realtor_data(scrapy.Spider):
     lat = request.xpath(lat_xpath).extract()
     lon = request.xpath(lon_xpath).extract()
     items = parse_bottom(request.xpath(items_xpath).extract())
-    style = request.xpath(style_xpath).extract()
+    if len(request.xpath(style_xpath).extract())>1:
+      style = ",".join(request.xpath(style_xpath).extract())
+    else:
+      style = request.xpath(style_xpath).extract()
     desc = request.xpath(desc_xpath).extract()
 
     output = [block, dt.datetime.strftime(now, "%m/%d/%Y"), url, full_address, price, top, items, style, desc]
