@@ -188,7 +188,7 @@ class realtor(scrapy.Spider):
   
   def parse(self, response):
       request = scrapy.Selector(response)
-      print(request.body)
+      print(response.body)
 
 '''
 class realtor(scrapy.Spider):
