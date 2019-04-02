@@ -2,8 +2,11 @@ import json, requests
 
 url = 'http://falcon.proxyrotator.com:51337/'
 
+apiKey1 = '8nScF6zCADybqLxBMUwYmXgoKetkQT7v'
+apiKey2 = "vVe9qKMBNojcgsPaytGQETmSR3rLDbnX"
+
 params = dict(
-    apiKey='8nScF6zCADybqLxBMUwYmXgoKetkQT7v',
+    apiKey=apiKey2,
     county='US'
 )
 
