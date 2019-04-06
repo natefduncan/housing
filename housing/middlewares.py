@@ -15,7 +15,7 @@ class CustomRetryMiddleware(RetryMiddleware):
 
     def process_response(self, request, response, spider):
         url = response.url
-        if response.status in [301, 307]:
+        if response.status in [301,302, 07]:
             log.msg("trying to redirect us: %s" %url, level=log.INFO)
             reason = 'redirect %d' %response.status
             return self._retry(request, reason, spider) or response
@@ -25,7 +25,9 @@ class CustomRetryMiddleware(RetryMiddleware):
             log.msg("trying to redirect us: %s" %url, level=log.INFO)
             reason = 'meta'
             return self._retry(request, reason, spider) or response
+        print(response.url)
         userblocked = "userblocked" in response.url
+        print(userblocked)
         # test for captcha page
         if userblocked:
             log.msg("blocked page %s" %url, level=log.INFO)
