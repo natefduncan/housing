@@ -21,7 +21,7 @@ for i in [apiKey1, apiKey2]:
       data = json.loads(resp.text)
       proxies.append(data['proxy'])
   
-  f = open(filename, 'a+')
+  f = open(filename, 'w+')
   
   for m in proxies:
       print(m)
