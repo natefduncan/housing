@@ -15,6 +15,8 @@ class MyPolicy(BanDetectionPolicy):
         # a ban if there is 'captcha' word in response body.
         ban = super(MyPolicy, self).response_is_ban(request, response)
         ban = ban or b'userblocked' in response.url
+        print(response.url)
+        print(ban)
         return ban
 
     def exception_is_ban(self, request, exception):
