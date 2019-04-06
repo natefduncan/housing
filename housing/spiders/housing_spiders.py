@@ -518,13 +518,12 @@ class zillow(scrapy.Spider):
       areas = ["Dallas-County_TX", "Collin-County_TX", "Denton-County_TX", "Rockwall-County_TX", "Hunt-County_TX", "Tarrant-County_TX", 
       "Johnson-County_TX", "Ellis-County_TX", "Kaufman-County_TX"]
       base = "https://www.realtor.com/realestateandhomes-search/"
-      for i in areas:
-        url = base + i
-        url = 'https://www.zillow.com/homes/frisco,-tx_rb/'
-        yield scrapy.Request(url=url, callback=self.parse)
+      url = 'https://www.zillow.com/homes/frisco,-tx_rb/'
+      yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
-      print(response)
+      print("RESPONSE")
+      print(response.body)
         
 class trulia(scrapy.Spider):
     
