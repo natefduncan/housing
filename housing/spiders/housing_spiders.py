@@ -513,10 +513,15 @@ class homefinder_data(scrapy.Spider):
 class zillow(scrapy.Spider):
     
     name = "zillow"
-    
-    start_urls = [
-        'https://www.zillow.com/homes/frisco,-tx_rb/'
-        ]
+        
+    def start_requests(self):
+      areas = ["Dallas-County_TX", "Collin-County_TX", "Denton-County_TX", "Rockwall-County_TX", "Hunt-County_TX", "Tarrant-County_TX", 
+      "Johnson-County_TX", "Ellis-County_TX", "Kaufman-County_TX"]
+      base = "https://www.realtor.com/realestateandhomes-search/"
+      for i in areas:
+        url = base + i
+        url = 'https://www.zillow.com/homes/frisco,-tx_rb/'
+        yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
       print(response)
