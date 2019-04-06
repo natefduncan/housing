@@ -67,6 +67,9 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
+    'housing.scraper.middlewares.CustomRetryMiddleware': 120,
+    'scrapy.contrib.downloadermiddleware.redirect.RedirectMiddleware': None,
+    'scrapy.contrib.downloadermiddleware.redirect.MetaRefreshMiddleware': None,
     'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
