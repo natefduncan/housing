@@ -71,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
 
-ROTATING_PROXY_BAN_POLICY = 'housing.housing.policy.MyBanPolicy'
+ROTATING_PROXY_BAN_POLICY = 'housing.policy.MyPolicy'
 
 RANDOM_UA_PER_PROXY = True
 
