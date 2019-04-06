@@ -522,7 +522,7 @@ class zillow(scrapy.Spider):
       yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
-      print("RESPONSE")
+      print("RESPONSE----")
       print(response.body)
         
 class trulia(scrapy.Spider):
