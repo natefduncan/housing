@@ -71,6 +71,8 @@ DOWNLOADER_MIDDLEWARES = {
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
 
+ROTATING_PROXY_BAN_POLICY = 'housing.policy.MyBanPolicy'
+
 RANDOM_UA_PER_PROXY = True
 
 ROTATING_PROXY_LIST_PATH = str(path) + "/housing/spiders/proxy_list.txt"
