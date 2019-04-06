@@ -7,7 +7,7 @@
 
 from scrapy import signals
 
-from scrapy.contrib.downloadermiddleware.retry import RetryMiddleware
+from scrapy.downloadermiddleware.retry import RetryMiddleware
 from scrapy.utils.response import get_meta_refresh
 from scrapy import log
 
