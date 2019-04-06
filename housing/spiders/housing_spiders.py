@@ -523,7 +523,7 @@ class zillow(scrapy.Spider):
     
     def parse(self, response):
       print("RESPONSE----")
-      url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')/@href"
+      url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')]/a/@href"
       request = scrapy.Selector(response)
       print(request.xpath(url_xpath))
         
