@@ -527,6 +527,7 @@ class zillow(scrapy.Spider):
       print("RESPONSE-------")
       url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')]/a[contains(@href, 'homedetails')]/@href"
       request = scrapy.Selector(response)
+      print(request.xpath(url_xpath))
       urls = request.xpath(url_xpath).extract()
       now = dt.datetime.now()
       file_name = "zillow_urls_" + str(now.year) + "." + str(now.month) + "."  + str(now.day) + ".txt"
