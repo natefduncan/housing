@@ -6,6 +6,7 @@ apiKey1 = '8nScF6zCADybqLxBMUwYmXgoKetkQT7v'
 apiKey2 = "vVe9qKMBNojcgsPaytGQETmSR3rLDbnX"
 
 filename = "housing/spiders/proxy_list.txt"
+f = open(filename, 'w+')
 
 for i in [apiKey1, apiKey2]:
 
@@ -21,10 +22,9 @@ for i in [apiKey1, apiKey2]:
       data = json.loads(resp.text)
       proxies.append(data['proxy'])
   
-  f = open(filename, 'w+')
-  
   for m in proxies:
       print(m)
       f.write("%s\n" % m)
-  f.close()
+
+f.close()
 
