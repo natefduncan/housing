@@ -515,12 +515,11 @@ class zillow(scrapy.Spider):
     name = "zillow"
         
     def start_requests(self):
-      areas = ["/dallas-county_rb/", "/Collin-County-TX_rb/", "/Denton-County-TX_rb/", "/Rockwall-County-TX_rb/", "/Hunt-County-TX_rb", 
-      "/Tarrant-County-TX_rb/", "/Johnson-County-TX_rb/", "/Ellis-County-TX_rb/", "/Kaufman-County-TX_rb/"]
-      base = 'https://www.zillow.com/homes'
+      areas = ["https://www.zillow.com/homes/for_sale/Denton-County-TX/pmf,pf_pt/988_rid/globalrelevanceex_sort/33.259647,-96.673165,32.889101,-97.16755_rect/10_zm/",
+      "https://www.zillow.com/homes/for_sale/Dallas-County-TX/pmf,pf_pt/978_rid/globalrelevanceex_sort/33.136976,-96.283494,32.393297,-97.272263_rect/10_zm/"]
       for i in areas:
         for j in range(1, 21):
-          url = base + i + "%s_p" % (str(j))
+          url = i + "%s_p" % (str(j))
           yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
