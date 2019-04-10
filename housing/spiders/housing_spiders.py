@@ -522,10 +522,11 @@ class zillow(scrapy.Spider):
       yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
-      print("RESPONSE----")
+      print("RESPONSE-------")
       url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')]/a/@href"
       request = scrapy.Selector(response)
-      print(request.xpath(url_xpath).extract())
+      for i in request.xpath(url_xpath).extract():
+        print(i)
         
 class trulia(scrapy.Spider):
     
