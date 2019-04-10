@@ -515,17 +515,17 @@ class zillow(scrapy.Spider):
     name = "zillow"
         
     def start_requests(self):
-      areas = ["/dallas-county_rb/", "/Collin-County-TX_rb/", "/Denton-County-TX_rb/", "Rockwall-County-TX_rb", "Hunt-County-TX_rb", 
-      "Tarrant-County-TX_rb", "Johnson-County-TX_rb", "Ellis-County-TX_rb", "Kaufman-County-TX_rb"]
+      areas = ["/dallas-county_rb/", "/Collin-County-TX_rb/", "/Denton-County-TX_rb/", "/Rockwall-County-TX_rb/", "/Hunt-County-TX_rb", 
+      "/Tarrant-County-TX_rb/", "/Johnson-County-TX_rb/", "/Ellis-County-TX_rb/", "/Kaufman-County-TX_rb/"]
       base = 'https://www.zillow.com/homes'
       for i in areas:
         for j in range(1, 21):
-          url = base + i + "/%s_p" % (str(j))
+          url = base + i + "%s_p" % (str(j))
           yield scrapy.Request(url=url, callback=self.parse)
     
     def parse(self, response):
       print("RESPONSE-------")
-      url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')]/a[contains(@href, 'homedetails')]/@href'
+      url_xpath = "//div[contains(@class, 'zsg-photo-card-content zsg-aspect-ratio-content')]/a[contains(@href, 'homedetails')]/@href"
       request = scrapy.Selector(response)
       urls = request.xpath(url_xpath).extract()
       now = dt.datetime.now()
