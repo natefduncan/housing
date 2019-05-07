@@ -9,7 +9,7 @@ class mortgage:
     def __init__(self, loan_amnt, interest, term, down_pmt):
         self.loan_amnt = loan_amnt
         self.interest = interest
-        self.term = term 
+        self.term = int(term) 
         self.down_pmt = down_pmt
         self.extra_pmts = dict()
         self.amort = self.amortize()
@@ -41,7 +41,7 @@ class mortgage:
         eop = []
         mnth = []
         extra = []
-        mthly_term = self.term*12
+        mthly_term = int(self.term) *12
         mthly_int = (1+self.interest)**(float(1)/12)-1
         mthly_pmt = self.loan_amnt/((1-(1+mthly_int)**(-mthly_term))/(mthly_int))
         self.mthly_pmt = round(mthly_pmt, 2)
@@ -91,7 +91,7 @@ class mortgage:
 class revenue:
     
     def __init__(self, years, rent, increase, start, occupancy):
-        self.years = years
+        self.years = int(years)
         self.rent = dict()
         self.rent[0] = rent
         self.increase = increase
@@ -182,7 +182,7 @@ class expenses:
         utilities = []
         total_opex = []
         
-        for i in range(0, self.years*12):
+        for i in range(0, int(self.years)*12):
             taxes.append(-self.home_value*((1+self.tax_rate)**(1/12)-1)*(1+self.opex_growth_rate)**(floor(i/24)))
             fees.append(self.management_fee*(1+self.opex_growth_rate)**(floor(i/12)))
             utilities.append(self.mthly_utilities*(1+self.opex_growth_rate)**(floor(i/12)))
@@ -231,7 +231,7 @@ class returns:
             self.cash_flow[i] += self.mortgage.extra_pmts[i]
         
         #Additional Capex
-        self.capex = [0] * self.revenue_sim.years * 12
+        self.capex = [0] * int(self.revenue_sim.years) * 12
         for i in self.capex_sim.capex.keys():
             self.capex[i] += self.capex_sim.capex[i]
             self.cash_flow[i] += self.capex[i]
@@ -374,7 +374,7 @@ class mc:
             
         return output
                     
-
+'''
 mortgage_parms = {"loan_amnt" : 200000,
                   "interest" : .03,
                   "term" : 30,
@@ -402,23 +402,6 @@ expense_parms = {"property_tax" : {"distribution" : "uniform", "value" : [.0219,
 
 capex_parms = {"months" : [4, 5, 6],
                "costs" : [-12000, -5000, -6000]}
+'''
 
-x = mc(100, mortgage_parms, revenue_parms, expense_parms, capex_parms)
-
-cfs = [i.cum_cash_flow for i in x.sim]
-
-df = pd.DataFrame(columns=["sim", "month", "value"])
-
-import matplotlib.pyplot as plt
-
-plt.plot(range(0, len(cfs)), cfs)
-
-for i in cfs:
-    plt.plot(range(0, len(i)), i)
-    
-for i in range(0, len(cfs)):
-    for j in range(0, len(cfs[i])):
-        row = [i, j, cfs[i][j]]
-        print(row)
-        df.loc[len(df)] = row
         
